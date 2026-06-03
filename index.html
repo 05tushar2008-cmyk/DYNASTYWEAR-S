@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DYNASTY WEAR'S | Premium Clothing</title>
+    <meta name="description" content="Discover DYNASTY WEAR'S, a premium clothing brand defining modern luxury and elegance.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind and Custom Fonts from code.html -->
+    <!-- Tailwind and Custom Fonts from code.html -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #050505;
+            color: #e3e2e2;
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .editorial-zoom:hover img {
+            transform: scale(1.05);
+        }
+        .liquid-gold-gradient {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 50%, #f2ca50 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .pattern-bg {
+            background-image: radial-gradient(#f2ca50 0.5px, transparent 0.5px);
+            background-size: 32px 32px;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#e3e2e2",
+                      "background": "#121414",
+                      "on-primary-fixed": "#241a00",
+                      "tertiary-fixed": "#e5e2e1",
+                      "tertiary-container": "#b4b2b2",
+                      "surface": "#121414",
+                      "surface-container-high": "#292a2a",
+                      "on-secondary-fixed-variant": "#474646",
+                      "secondary": "#c9c6c5",
+                      "on-tertiary-fixed-variant": "#474746",
+                      "on-secondary": "#313030",
+                      "primary": "#f2ca50",
+                      "on-primary": "#3c2f00",
+                      "surface-tint": "#e9c349",
+                      "surface-container-low": "#1b1c1c",
+                      "primary-fixed": "#ffe088",
+                      "on-background": "#e3e2e2",
+                      "primary-fixed-dim": "#e9c349",
+                      "surface-container-lowest": "#0d0e0f",
+                      "secondary-fixed-dim": "#c9c6c5",
+                      "on-tertiary-container": "#454544",
+                      "inverse-on-surface": "#2f3031",
+                      "surface-bright": "#383939",
+                      "secondary-fixed": "#e5e2e1",
+                      "on-tertiary": "#313030",
+                      "surface-container": "#1f2020",
+                      "inverse-primary": "#735c00",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "error-container": "#93000a",
+                      "surface-variant": "#343535",
+                      "on-primary-container": "#554300",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "tertiary": "#d0cdcd",
+                      "on-secondary-container": "#b7b4b4",
+                      "surface-container-highest": "#343535",
+                      "outline-variant": "#4d4635",
+                      "on-error-container": "#ffdad6",
+                      "on-primary-fixed-variant": "#574500",
+                      "surface-dim": "#121414",
+                      "primary-container": "#d4af37",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "secondary-container": "#474646",
+                      "outline": "#99907c",
+                      "on-surface-variant": "#d0c5af",
+                      "on-surface": "#e3e2e2",
+                      "on-error": "#690005"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "80px",
+                      "base": "8px",
+                      "gutter": "32px",
+                      "section-gap": "160px",
+                      "container-max": "1440px",
+                      "margin-mobile": "24px"
+              },
+              "fontFamily": {
+                      "body-lg": ["DM Sans"],
+                      "label-caps": ["DM Sans"],
+                      "display-lg-mobile": ["Bodoni Moda"],
+                      "headline-lg": ["Bodoni Moda"],
+                      "body-md": ["DM Sans"],
+                      "display-lg": ["Bodoni Moda"],
+                      "headline-md": ["Bodoni Moda"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "display-lg-mobile": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">DYNASTY WEAR'S</div>
+        <div class="nav-links">
+            <a href="collections.html">Collections</a>
+            <a href="#about">The Brand</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-actions" style="display:flex; gap:1.5rem; align-items:center;">
+            <button class="btn-primary" onclick="window.location.href='collections.html'">Shop Now</button>
+            <a href="cart.html" style="position:relative; color:#e3e2e2; text-decoration:none;">
+                <span class="material-symbols-outlined">shopping_bag</span>
+                <span class="cart-count hidden" style="position:absolute; top:-5px; right:-10px; background:#f2ca50; color:#3c2f00; font-size:10px; font-weight:bold; padding:2px 6px; border-radius:999px;">0</span>
+            </a>
+            <a href="account.html" style="color:#e3e2e2; text-decoration:none;">
+                <span class="material-symbols-outlined">person</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Canvas Container for Image Sequence -->
+    <section class="hero-sequence-container">
+        <div class="canvas-wrapper">
+            <canvas id="hero-canvas"></canvas>
+            <div class="hero-content">
+                <h1 class="hero-title">WELCOME TO DYNASTY</h1>
+                <p class="hero-subtitle">The Era of Premium Wear</p>
+                <div class="scroll-indicator">
+                    <span>Scroll to explore</span>
+                    <div class="mouse"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Promo Banner -->
+<section class="px-margin-mobile md:px-margin-desktop mt-20 max-w-container-max mx-auto">
+    <div class="relative overflow-hidden rounded-lg border border-primary/30 bg-surface-container-low h-32 md:h-48 flex items-center justify-center cursor-pointer" onclick="window.location.href='collections.html'">
+        <div class="absolute inset-0 pattern-bg opacity-20"></div>
+        <div id="home-promo-slider" class="relative z-10 w-full h-full">
+            <div class="home-promo-slide absolute inset-0 flex flex-col justify-center items-center transition-opacity duration-1000 opacity-100">
+                <span class="font-label-caps text-[10px] tracking-widest text-primary uppercase mb-2 block">Limited Time Offer</span>
+                <h2 class="font-headline-lg text-2xl md:text-4xl mb-2 uppercase text-white">Buy Any 2, Get 1 Free</h2>
+                <p class="font-body-md text-xs md:text-base text-on-surface-variant">Add any 3 items priced at â‚¹549, and get 1 on us.</p>
+            </div>
+            <div class="home-promo-slide absolute inset-0 flex flex-col justify-center items-center transition-opacity duration-1000 opacity-0 pointer-events-none">
+                <span class="font-label-caps text-[10px] tracking-widest text-primary uppercase mb-2 block">Complimentary Delivery</span>
+                <h2 class="font-headline-lg text-2xl md:text-4xl mb-2 uppercase text-white">Free Shipping</h2>
+                <p class="font-body-md text-xs md:text-base text-on-surface-variant">On all orders above â‚¹499 across India.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const homeSlides = document.querySelectorAll('.home-promo-slide');
+        if(homeSlides.length > 0) {
+            let currentHomeSlide = 0;
+            setInterval(() => {
+                homeSlides[currentHomeSlide].classList.replace('opacity-100', 'opacity-0');
+                homeSlides[currentHomeSlide].classList.add('pointer-events-none');
+                currentHomeSlide = (currentHomeSlide + 1) % homeSlides.length;
+                homeSlides[currentHomeSlide].classList.replace('opacity-0', 'opacity-100');
+                homeSlides[currentHomeSlide].classList.remove('pointer-events-none');
+            }, 4000);
+        }
+    });
+</script>
+
+<!-- New Arrivals Grid -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop transition-all duration-1000 opacity-100 mt-20">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
+<div>
+<span class="font-label-caps text-label-caps text-primary mb-4 block">FRESH FROM THE ARCHIVE</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg">TRENDING NOW</h3>
+</div>
+<div class="mt-6 md:mt-0">
+<a href="collections.html" class="inline-block px-8 py-3 border border-primary text-primary font-label-caps text-[12px] tracking-[0.2em] hover:bg-primary hover:text-on-primary transition-all duration-500 uppercase">
+    VIEW MORE
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product 1 -->
+<div class="group">
+<div class="relative overflow-hidden mb-6 aspect-[3/4]"><img alt="Dynasty Core Tee" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6QU8dYshtqg3y-u_0gDEWygPnNmw0GLQSlRew1td5VHgoZUFCf1SilwNkHGMMozDEieSmLvKojwwQ3ihxO_P4YDWHISTr2PLlmtDoFrw5_kn5wMai4AlOOH5yFJMzY33hXYNueyb4cOKyy6zFy1KxolR--oA7GLON82r5XWhY6dKzzuaWyEpTtses-DO2OdW-uYZhyB-hs62wnmzOQV9SHeJauuloX_ZQQacoVclJ5O41m9y9BjJNwnHIoOpcANPeVvZbTB4yoNs">
+<div class="absolute top-4 left-4 z-10 bg-white text-black px-3 py-1 font-label-caps text-[10px]">NEW DROP</div>
+<button class="absolute bottom-0 left-0 right-0 bg-primary text-on-primary py-4 font-label-caps translate-y-full group-hover:translate-y-0 transition-transform duration-300" onclick="window.location.href='collections.html'">SHOP NOW</button>
+<div class="absolute top-4 right-4 z-10 bg-primary text-on-primary px-3 py-1 font-label-caps text-[10px]">TRENDING</div></div>
+<h5 class="font-label-caps text-on-surface mb-1">No Risk No Story Tshirt</h5>
+<p class="font-label-caps text-primary">â‚¹549</p>
+</div>
+<!-- Product 2 -->
+<div class="group">
+<div class="relative overflow-hidden mb-6 aspect-[3/4]"><div class="absolute top-4 left-4 z-10 bg-primary text-on-primary px-3 py-1 font-label-caps text-[10px]">TRENDING</div><img alt="Architect Hoodie" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFGNpTrPNKD4qQlaWAJA45RaT4dvHhhbrBGgj0PV4FxtH8rW6D8HnCb3fP24hJHotlhZa2QV0Icdg5Zra08TO2mWWBuZE5ttao6OCNPUCaMBlM-TeyFcsgReaLGwcTBtnmz0PloJT3kOdGSG3GWSIcKkZc__oJJ5_AjB2eRbSw1eo8pWDkB97LEKUxhSa8x9oSeefUSpzBKTvM9k4NDz9I-JHu7wlw7XOqoVgddsqg3eekzraFmnLu5lPKFvx1QoRH2tOxj9HEJF0">
+<button class="absolute bottom-0 left-0 right-0 bg-primary text-on-primary py-4 font-label-caps translate-y-full group-hover:translate-y-0 transition-transform duration-300" onclick="window.location.href='collections.html'">SHOP NOW</button>
+</div>
+<h5 class="font-label-caps text-on-surface mb-1">Break Rules Tshirt</h5>
+<p class="font-label-caps text-primary">â‚¹549</p>
+</div>
+<!-- Product 3 -->
+<div class="group">
+<div class="relative overflow-hidden mb-6 aspect-[3/4]"><div class="absolute top-4 left-4 z-10 bg-primary text-on-primary px-3 py-1 font-label-caps text-[10px]">TRENDING</div><img alt="Urban Cargo Pant" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB09mWzpNIoTWapLFYbZOeJN_vX5kLV6lXV77ozRz75Mlb40_WvYKOix2AKrryKEcFzTCbHtrirlCckxpurL501MVW_hA5IIhnxUPUGfFsEWHrPnFUL7HFHtTVNQfKLl2XWRYGkuu1K1VvHTTY8pW01SVSbunUvB6FFxDCAmfUV23PF0ZlAyWLLV5CkdUxP_ezmcXtVCj6QG8Afkp1mf_XkqKAmCs7IHs2PPZUHZHCX1NyqHnW0kGrcBMqg7OAcxIyh61ITIMIa4Dg">
+<button class="absolute bottom-0 left-0 right-0 bg-primary text-on-primary py-4 font-label-caps translate-y-full group-hover:translate-y-0 transition-transform duration-300" onclick="window.location.href='collections.html'">SHOP NOW</button>
+</div>
+<h5 class="font-label-caps text-on-surface mb-1">Loose Lips Tshirt</h5>
+<p class="font-label-caps text-primary">â‚¹549</p>
+</div>
+<!-- Product 4 -->
+<div class="group">
+<div class="relative overflow-hidden mb-6 aspect-[3/4]"><div class="absolute top-4 left-4 z-10 bg-primary text-on-primary px-3 py-1 font-label-caps text-[10px]">TRENDING</div><img alt="Monument Graphic LS" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlJwl_8cadK7RZNaNWsYCan2E9DYbo3pomIIWoiKH5HcPSvWq65lbNcd8vfv-sAsFvZT3pTu4aDCI00s34Sr45gmJTVCU9tozJXtYuSALwODnYiHWgGkRN0OjyRICsYp9r6ty3fXX3l9efU710jDx_5UunQdCG3rGo5WyoSOx2CZ7omyj0l_VEuYRQsUcZaZ0AHunvS4Mcvuk82SCAYkIpQ-yzDsN3OsTNrs74a_rLDShJn3nkLAKaZtK3PLMKqo3ihLDEYKn1Gmk">
+<button class="absolute bottom-0 left-0 right-0 bg-primary text-on-primary py-4 font-label-caps translate-y-full group-hover:translate-y-0 transition-transform duration-300" onclick="window.location.href='collections.html'">SHOP NOW</button></div>
+<h5 class="font-label-caps text-on-surface mb-1">Attitude Tshirt</h5>
+<p class="font-label-caps text-primary">â‚¹549</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Heritage Section -->
+<section class="py-section-gap bg-[#080808] relative overflow-hidden pattern-bg transition-all duration-1000 opacity-100">
+<div class="px-margin-mobile md:px-margin-desktop max-w-5xl mx-auto text-center relative z-10">
+<h2 class="font-display-lg text-[40px] md:text-[56px] mb-12 text-primary uppercase tracking-[0.1em]">THE HERITAGE OF DYNASTY</h2>
+<div class="space-y-8 font-body-md text-body-md text-on-surface leading-loose max-w-4xl mx-auto">
+<p class="">
+                Dynasty Wearâ€™s is not merely a brand; it is an enduring philosophy of uncompromising craftsmanship. Founded on the principles of severe minimalism and visceral impact, our atelier transforms the world's most rare fibers into silhouettes of quiet power.
+            </p>
+<p class="text-on-surface italic py-4">
+                "We do not design for the trend. We design for the legacy."
+            </p>
+<p class="">
+                Every stitch is an intentional act. Every garment, a numbered artifact. We invite those who seek the permanent amidst the ephemeral to experience the depth of Carbon and the brilliance of Liquid Gold.
+            </p>
+</div>
+<div class="mt-20">
+<a class="inline-block px-12 py-5 border border-primary text-primary font-label-caps text-[12px] tracking-[0.2em] hover:bg-primary hover:text-on-primary transition-all duration-500 uppercase" href="#">
+                DISCOVER OUR PROCESS
+            </a>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop bg-[#0b0b0b] transition-all duration-1000 opacity-100">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="font-display-lg text-[32px] md:text-[40px] mb-6 uppercase tracking-tight">ENTER THE INNER CIRCLE</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm uppercase tracking-wider leading-relaxed">
+                RECEIVE EXCLUSIVE EARLY ACCESS TO OUR LIMITED COLLECTIONS AND INVITATIONS TO PRIVATE ATELIER SHOWCASES.
+            </p>
+</div>
+<div>
+<form class="flex flex-col sm:flex-row gap-0 items-end">
+<div class="flex-grow w-full relative">
+<label class="block font-label-caps text-[10px] text-primary uppercase tracking-[0.2em] mb-4">EMAIL ADDRESS</label>
+<input class="w-full bg-transparent border-0 border-b border-primary/40 py-4 px-0 font-label-caps text-[14px] focus:ring-0 focus:border-primary transition-all placeholder:text-on-surface-variant/40" placeholder="YOUR@EMAIL.COM" type="email">
+</div>
+<button class="w-full sm:w-auto px-12 py-4 bg-primary text-on-primary font-label-caps text-[12px] uppercase tracking-[0.2em] hover:bg-primary-fixed transition-colors whitespace-nowrap sm:ml-8" type="submit" style="transform: scale(1);">FOR MORE</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-24 bg-surface-container-lowest">
+<div class="flex flex-col items-center justify-center px-margin-mobile md:px-margin-desktop">
+<div class="font-display-lg text-[32px] md:text-[40px] text-primary uppercase mb-12 tracking-[0.15em] font-bold">
+            DYNASTY WEAR'S
+        </div>
+<div class="flex flex-wrap justify-center gap-x-12 gap-y-6 mb-12">
+<a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-all uppercase tracking-[0.2em]" href="#">PRIVACY POLICY</a>
+<a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-all uppercase tracking-[0.2em]" href="#">TERMS OF SERVICE</a>
+<a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-all uppercase tracking-[0.2em]" href="#">SHIPPING &amp; REPLACEMENT</a>
+<a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-all uppercase tracking-[0.2em]" href="#">CONTACT</a>
+</div>
+<p class="font-label-caps text-[10px] text-on-surface-variant/50 tracking-[0.3em] uppercase mb-12">
+            Â© 2024 DYNASTY WEAR'S. ALL RIGHTS RESERVED.
+        </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 border border-secondary-container/20 flex items-center justify-center hover:border-primary transition-colors text-on-surface-variant hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="share">share</span>
+</a>
+<a class="w-10 h-10 border border-secondary-container/20 flex items-center justify-center hover:border-primary transition-colors text-on-surface-variant hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="public">public</span>
+</a>
+</div>
+</div>
+</footer>
+
+    <!-- Main Logic -->
+    <script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/ecommerce.js?v=2"></script>
+</body>
+</html>
+

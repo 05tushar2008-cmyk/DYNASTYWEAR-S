@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>MY ACCOUNT | DYNASTY WEAR'S</title>
+    <meta name="description" content="View your past orders and track their status.">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "surface-variant": "#343535", "surface-container-low": "#1b1c1c",
+              "surface-container": "#1f2020", "primary-container": "#d4af37",
+              "surface": "#121414", "on-surface-variant": "#d0c5af",
+              "background": "#121414", "primary": "#f2ca50",
+              "on-surface": "#e3e2e2", "on-background": "#e3e2e2"
+            },
+            "fontFamily": {
+              "headline-md": ["Bodoni Moda"], "display-lg": ["Bodoni Moda"],
+              "label-caps": ["DM Sans"], "headline-lg": ["Bodoni Moda"],
+              "body-md": ["DM Sans"], "body-lg": ["DM Sans"]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden">
+    <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-variant flex justify-between items-center px-8 md:px-20 h-20 transition-all duration-300">
+        <div class="font-display-lg text-2xl tracking-tighter text-primary"><a href="index.html">DYNASTY WEAR'S</a></div>
+        <div class="flex items-center gap-6">
+            <a href="collections.html" class="font-label-caps text-xs text-on-surface-variant hover:text-primary transition-colors uppercase">Shop</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-32 px-8 md:px-20 max-w-[1200px] mx-auto w-full">
+        <!-- Auth View -->
+        <div id="auth-view" class="hidden max-w-md mx-auto bg-surface-container-low p-8 border border-surface-variant rounded-lg">
+            <h1 class="font-headline-lg text-3xl mb-8 text-center">Account Access</h1>
+            <form id="login-form" class="space-y-6">
+                <div>
+                    <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">Email</label>
+                    <input required type="email" id="login-email" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded" placeholder="user@example.com">
+                </div>
+                <div>
+                    <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">Password</label>
+                    <input required type="password" id="login-pass" value="password123" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
+                </div>
+                <div class="flex gap-4">
+                    <button type="submit" id="btn-login" class="flex-1 h-12 bg-primary text-[#3c2f00] font-label-caps tracking-[0.2em] uppercase hover:bg-primary-container active:scale-[0.98] transition-all font-bold">
+                        Login
+                    </button>
+                    <button type="submit" id="btn-signup" class="flex-1 h-12 border border-primary text-primary font-label-caps tracking-[0.2em] uppercase hover:bg-primary hover:text-[#3c2f00] active:scale-[0.98] transition-all font-bold">
+                        Sign Up
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Dashboard View -->
+        <div id="dashboard-view" class="hidden">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h1 class="font-display-lg text-4xl lg:text-5xl font-light mb-2">My Account</h1>
+                    <p class="text-on-surface-variant">Welcome back, <span id="user-email" class="text-primary"></span></p>
+                </div>
+                <div class="flex gap-4">
+                    <a id="admin-link" href="admin.html" class="hidden px-6 py-3 border border-primary text-primary font-label-caps text-xs tracking-widest uppercase hover:bg-primary hover:text-[#3c2f00] transition-colors">Admin Dashboard</a>
+                    <button onclick="logout()" class="px-6 py-3 border border-surface-variant text-on-surface-variant font-label-caps text-xs tracking-widest uppercase hover:border-error hover:text-error transition-colors">Sign Out</button>
+                </div>
+            </div>
+
+            <h2 class="font-headline-lg text-2xl mb-6 border-b border-surface-variant pb-4">Order History & Tracking</h2>
+            <div id="orders-container" class="space-y-6">
+                <!-- Orders -->
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/ecommerce.js?v=2"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const user = await getUser();
+            if (user) {
+                document.getElementById('auth-view').classList.add('hidden');
+                document.getElementById('dashboard-view').classList.remove('hidden');
+                document.getElementById('user-email').textContent = user.email;
+                if(user.role === 'admin' || user.email.includes('admin')) {
+                    document.getElementById('admin-link').classList.remove('hidden');
+                }
+                await renderOrders(user.email);
+            } else {
+                document.getElementById('auth-view').classList.remove('hidden');
+                document.getElementById('dashboard-view').classList.add('hidden');
+            }
+        });
+
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const pass = document.getElementById('login-pass').value;
+            const isSignup = e.submitter && e.submitter.id === 'btn-signup';
+            
+            if (isSignup) {
+                await signup(email, pass);
+            } else {
+                const user = await login(email, pass);
+                if(user) window.location.reload();
+            }
+        });
+
+        async function renderOrders(userEmail) {
+            const container = document.getElementById('orders-container');
+            const myOrders = await getOrders();
+
+            if (myOrders.length === 0) {
+                container.innerHTML = '<p class="text-on-surface-variant">You have no orders yet.</p>';
+                return;
+            }
+
+            myOrders.reverse().forEach(order => {
+                const el = document.createElement('div');
+                el.className = 'bg-surface-container-low p-6 border border-surface-variant rounded-lg';
+                
+                let statusColor = 'text-primary';
+                if(order.status === 'Shipped') statusColor = 'text-blue-400';
+                if(order.status === 'Delivered') statusColor = 'text-green-400';
+
+                el.innerHTML = `
+                    <div class="flex justify-between items-start mb-4 border-b border-surface-variant pb-4">
+                        <div>
+                            <p class="font-label-caps text-xs text-on-surface-variant mb-1 uppercase">Order #${order.id}</p>
+                            <p class="text-sm">${new Date(order.date).toLocaleDateString()}</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-label-caps text-xs text-on-surface-variant mb-1 uppercase">Status</p>
+                            <p class="font-bold ${statusColor} tracking-widest uppercase text-sm">${order.status}</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        ${order.items.map(item => `
+                            <div class="flex justify-between text-sm">
+                                <span>${item.quantity}x ${item.name} (${item.size})</span>
+                                <span>₹${item.price * item.quantity}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-surface-variant flex justify-between font-bold">
+                        <span>Total</span>
+                        <span class="text-primary">₹${order.total}</span>
+                    </div>
+                `;
+                container.appendChild(el);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<script>
+window.onerror=function(m,u,l){document.body.innerHTML+='<div style="position:fixed;top:0;left:0;background:red;color:white;z-index:9999;padding:20px;font-size:20px;">ERROR: '+m+'<br>Line: '+l+'</div>'};
+window.addEventListener('unhandledrejection',function(e){document.body.innerHTML+='<div style="position:fixed;top:100px;left:0;background:red;color:white;z-index:9999;padding:20px;font-size:20px;">PROMISE ERROR: '+e.reason+'</div>'});
+</script>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>PUMA PRINTED TSHIRT | DYNASTY WEAR'S</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "surface-variant": "#343535", "surface-container-low": "#1b1c1c",
+              "surface-container": "#1f2020", "primary-container": "#d4af37",
+              "surface": "#121414", "on-surface-variant": "#d0c5af",
+              "background": "#121414", "primary": "#f2ca50",
+              "on-surface": "#e3e2e2", "on-background": "#e3e2e2",
+              "on-primary": "#3c2f00"
+            },
+            "fontFamily": {
+              "headline-md": ["Bodoni Moda"], "display-lg": ["Bodoni Moda"],
+              "label-caps": ["DM Sans"], "headline-lg": ["Bodoni Moda"],
+              "body-md": ["DM Sans"], "body-lg": ["DM Sans"]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .swatch-btn.active { box-shadow: 0 0 0 2px #121414, 0 0 0 4px #f2ca50; transform: scale(1.1); }
+        .size-btn.active { background-color: #f2ca50; color: #3c2f00; border-color: #f2ca50; }
+        .accordion-content { transition: max-height 0.3s ease-out; overflow: hidden; max-height: 0; }
+        .accordion-content.open { max-height: 500px; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden">
+    <!-- Navbar (same as collection) -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-variant flex justify-between items-center px-8 md:px-20 h-20 transition-all duration-300">
+        <div class="font-display-lg text-2xl tracking-tighter text-primary"><a href="index.html">DYNASTY WEAR'S</a></div>
+        <div class="hidden md:flex items-center gap-10">
+            <a class="font-label-caps text-xs tracking-widest text-primary border-b border-primary pb-1 uppercase" href="collections.html">Collections</a>
+            <a class="font-label-caps text-xs tracking-widest text-on-surface-variant hover:text-primary transition-colors uppercase" href="#">Atelier</a>
+            <a class="font-label-caps text-xs tracking-widest text-on-surface-variant hover:text-primary transition-colors uppercase" href="#">Heritage</a>
+        </div>
+        <div class="flex items-center gap-6">
+<a href="cart.html" class="relative scale-95 active:scale-90 active:opacity-80 transition-all text-on-surface-variant hover:text-primary block">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="cart-count hidden absolute -top-1 -right-2 bg-primary text-on-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full">0</span>
+</a>
+<a href="account.html" class="scale-95 active:scale-90 active:opacity-80 transition-all text-on-surface-variant hover:text-primary block">
+<span class="material-symbols-outlined">person</span>
+</a>
+</div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-32 px-8 md:px-20 max-w-[1440px] mx-auto w-full">
+        <nav class="mb-8 flex items-center gap-2">
+            <a class="font-label-caps text-xs tracking-widest text-on-surface-variant hover:text-primary uppercase" href="index.html">Home</a>
+            <span class="material-symbols-outlined text-[12px] text-surface-variant">chevron_right</span>
+            <a class="font-label-caps text-xs tracking-widest text-on-surface-variant hover:text-primary uppercase" href="collections.html">Collections</a>
+            <span class="material-symbols-outlined text-[12px] text-surface-variant">chevron_right</span>
+            <span class="font-label-caps text-xs tracking-widest text-primary uppercase dynamic-title">Loading...</span>
+        </nav>
+
+        <div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
+            <div class="w-full lg:w-3/5 relative overflow-hidden group/slider bg-surface-container-low aspect-[3/4] h-fit">
+                <div class="slider-container flex w-full h-full overflow-x-auto snap-x snap-mandatory" id="dynamic-images" style="scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none;">
+                    <!-- Dynamic images will be inserted here -->
+                </div>
+                <div class="slider-nav absolute inset-0 flex items-center justify-between px-4 opacity-0 transition-opacity duration-300 pointer-events-none z-20 group-hover/slider:opacity-100">
+                    <button class="prev-btn p-3 bg-surface/60 backdrop-blur-sm text-primary rounded-full hover:bg-primary hover:text-on-primary pointer-events-auto transition-all active:scale-90" onclick="scrollDynamicSlider(-1)">
+                        <span class="material-symbols-outlined !text-2xl">chevron_left</span>
+                    </button>
+                    <button class="next-btn p-3 bg-surface/60 backdrop-blur-sm text-primary rounded-full hover:bg-primary hover:text-on-primary pointer-events-auto transition-all active:scale-90" onclick="scrollDynamicSlider(1)">
+                        <span class="material-symbols-outlined !text-2xl">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Info Sticky Sidebar -->
+            <div class="w-full lg:w-2/5 relative">
+                <div class="sticky top-32">
+                    <div class="mb-2 font-label-caps text-xs text-primary tracking-widest">LIMITED RELEASE</div>
+                    <h1 class="font-display-lg text-4xl lg:text-5xl font-light mb-4 dynamic-title">Loading...</h1>
+                    <p class="text-2xl font-semibold text-primary mb-8 dynamic-price">â‚¹0</p>
+
+                    <!-- Colors -->
+                    <div class="mb-8">
+                        <h3 class="font-label-caps text-xs tracking-widest text-on-surface-variant mb-4 uppercase">Color: <span class="text-on-surface ml-2" id="color-name">Black</span></h3>
+                        <div class="flex flex-wrap gap-4" id="dynamic-colors">
+                            <!-- Dynamic colors will be inserted here -->
+                        </div>
+                    </div>
+
+                    <!-- Size -->
+                    <div class="mb-10">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-label-caps text-xs tracking-widest text-on-surface-variant uppercase">Size</h3>
+                            <button class="font-label-caps text-xs text-primary hover:underline">Size Guide</button>
+                        </div>
+                        <div class="grid grid-cols-3 gap-3">
+                            <button class="size-btn active h-12 border border-primary bg-primary text-on-primary flex items-center justify-center font-label-caps text-xs transition-all active:scale-95">M</button>
+                            <button class="size-btn h-12 border border-surface-variant flex items-center justify-center font-label-caps text-xs text-on-surface-variant hover:border-primary transition-all active:scale-95">L</button>
+                            <button class="size-btn h-12 border border-surface-variant flex items-center justify-center font-label-caps text-xs text-on-surface-variant hover:border-primary transition-all active:scale-95">XL</button>
+                        </div>
+                    </div>
+
+                    <!-- Action -->
+                    <button id="btn-add-cart" class="w-full h-14 bg-primary text-on-primary font-label-caps text-sm tracking-[0.2em] uppercase hover:bg-primary-container active:scale-[0.98] transition-all mb-10 shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-lg">shopping_bag</span>
+                        Add To Cart
+                    </button>
+
+                    <!-- Accordions -->
+                    <div class="border-t border-surface-variant">
+                        <button class="w-full py-5 flex justify-between items-center text-left" onclick="toggleAccordion('desc')">
+                            <span class="font-label-caps text-xs tracking-widest uppercase">Description</span>
+                            <span class="material-symbols-outlined transition-transform duration-300" id="icon-desc">add</span>
+                        </button>
+                        <div class="accordion-content" id="content-desc">
+                            <div class="pb-5 text-on-surface-variant text-sm leading-relaxed dynamic-desc">
+                                Loading...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-t border-surface-variant">
+                        <button class="w-full py-5 flex justify-between items-center text-left" onclick="toggleAccordion('details')">
+                            <span class="font-label-caps text-xs tracking-widest uppercase">Details & Care</span>
+                            <span class="material-symbols-outlined transition-transform duration-300" id="icon-details">add</span>
+                        </button>
+                        <div class="accordion-content" id="content-details">
+                            <div class="pb-5 text-on-surface-variant text-sm leading-relaxed">
+                                <ul class="list-disc pl-4 space-y-2">
+                                    <li>100% Premium Organic Cotton</li>
+                                    <li>Heavyweight 240gsm fabric</li>
+                                    <li>Dropped shoulders, relaxed fit</li>
+                                    <li>Machine wash cold inside out</li>
+                                    <li>Do not iron on print</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-t border-b border-surface-variant">
+                        <button class="w-full py-5 flex justify-between items-center text-left" onclick="toggleAccordion('shipping')">
+                            <span class="font-label-caps text-xs tracking-widest uppercase">Shipping & Replacements</span>
+                            <span class="material-symbols-outlined transition-transform duration-300" id="icon-shipping">add</span>
+                        </button>
+                        <div class="accordion-content" id="content-shipping">
+                            <div class="pb-5 text-on-surface-variant text-sm leading-relaxed">
+                                Free shipping on orders above â‚¹499. Replacements are accepted within 24 hours.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- You Might Also Like Section -->
+    <section class="w-full py-24 bg-background">
+        <div class="px-8 md:px-20 max-w-[1440px] mx-auto">
+            <h3 class="font-headline-lg text-2xl md:text-3xl text-on-surface mb-12 uppercase text-center tracking-widest">You Might Also Like</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 2: Break Rules Tshirt -->
+                <div class="group product-card" data-current-index="0" data-product-id="2">
+                    <div class="relative aspect-[3/4] mb-6 overflow-hidden bg-surface-container-low group/slider">
+                        <div class="slider-container flex w-full h-full overflow-hidden" id="slider-container-2">
+                            <img alt="Break Rules Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLg-EWYDIJuiiz-D_SMCMJzK9-FQj6QBWILL0qo-Oag1lsYYxa44Xkx_sWrrEPyYVoX4XBSuq7-ejrmISs1oUlzsMYjBwIm8OOrXkdOpNZO_Ndmi8X1xc6nODnxDghJ4T_ToLlajEcfQ8gWpdvPGaXRl-l5oLX1H58OS6I5W62zRX4SY9pGDd-Ju2eieoKCewwxm2juHwAdErO8_HlfFOUqWU6tbYkFNRr7Y8_v-GIbc_swlmqoXAxHGhPfNn_bj7oi1XEw1RsLnE">
+                        </div>
+                        <div class="quick-view absolute inset-x-0 bottom-0 opacity-0 transform translate-y-4 transition-all duration-300 bg-surface/80 backdrop-blur-md p-4 z-30 group-hover/slider:opacity-100 group-hover/slider:translate-y-0">
+                            <button onclick="event.stopPropagation(); window.location.href='product.html?id=' + this.closest('.product-card').getAttribute('data-product-id');" class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:bg-primary-container active:scale-[0.98] transition-all uppercase tracking-[0.2em] shadow-lg">BUY NOW</button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="text-on-surface mb-1 font-display-lg text-xl font-light">Break Rules Tshirt</h2>
+                        <p class="font-label-caps text-label-caps text-primary"><span style="font-size: 14px; font-weight: 600;">₹549</span></p>
+                    </div>
+                </div>
+                <!-- Product 3: Loose Lips Tshirt -->
+                <div class="group product-card" data-current-index="0" data-product-id="3">
+                    <div class="relative aspect-[3/4] mb-6 overflow-hidden bg-surface-container-low group/slider">
+                        <div class="slider-container flex w-full h-full overflow-hidden" id="slider-container-3">
+                            <img alt="Loose Lips Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFAC4aNTfKVTc5XVSSfJNjVL5_jwz0xUXF8bCizqncNFEvWJ1Zr_iPKWPT4DTkXaOjb8cWqe3GDPWZjw716PHrXgDzUTBiIqz44i2W8Edwe7EKzfmIK5jQ8Rr3dpgUCcpVzzFYMFf_pwHcQo2Iyp6YjYef-7SxXQJtqfrkRHl63SzeyrA4wseKNiy4duMsZjgpPvNKi9asOFYk_W7wcaaJ1OtUU50ozfDOFMHjv3yG2KAYeZSgHvKRgG6TDKT-ka6cjMsRTwvImIA">
+                        </div>
+                        <div class="quick-view absolute inset-x-0 bottom-0 opacity-0 transform translate-y-4 transition-all duration-300 bg-surface/80 backdrop-blur-md p-4 z-30 group-hover/slider:opacity-100 group-hover/slider:translate-y-0">
+                            <button onclick="event.stopPropagation(); window.location.href='product.html?id=' + this.closest('.product-card').getAttribute('data-product-id');" class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:bg-primary-container active:scale-[0.98] transition-all uppercase tracking-[0.2em] shadow-lg">BUY NOW</button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="text-on-surface mb-1 font-display-lg text-xl font-light">Loose Lips Tshirt</h2>
+                        <p class="font-label-caps text-label-caps text-primary"><span style="font-size: 14px; font-weight: 600;">₹549</span></p>
+                    </div>
+                </div>
+                <!-- Product 5: Attitude Tshirt -->
+                <div class="group product-card" data-current-index="0" data-product-id="5">
+                    <div class="relative aspect-[3/4] mb-6 overflow-hidden bg-surface-container-low group/slider">
+                        <div class="slider-container flex w-full h-full overflow-hidden" id="slider-container-5">
+                            <img alt="Attitude Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3ExH_R15wA2C56cSUvapKKqdMJppLzn4y7Rb_h_wq7tbmbR5GyA2W5DQKq8YaB-JpD-zYBTQmMQERyqPKbkhnlznDICDFrCeOwhaz6JK2f5wYMSv067PfoFIEWUF03JbHy9LdfZufT9XHrkbh_VZ-8dGVNMb78B3-Gp0GBJ-DKkR2KKfUcH7Gq9WyvXFjpFvqwtZp4jGFb83ABSElSH55oh4wvdoAiOhtMUUkYWTIS66BN3-O5MpLILIZuzcdUrWuCE652Ylc-X0">
+                        </div>
+                        <div class="quick-view absolute inset-x-0 bottom-0 opacity-0 transform translate-y-4 transition-all duration-300 bg-surface/80 backdrop-blur-md p-4 z-30 group-hover/slider:opacity-100 group-hover/slider:translate-y-0">
+                            <button onclick="event.stopPropagation(); window.location.href='product.html?id=' + this.closest('.product-card').getAttribute('data-product-id');" class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:bg-primary-container active:scale-[0.98] transition-all uppercase tracking-[0.2em] shadow-lg">BUY NOW</button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="text-on-surface mb-1 font-display-lg text-xl font-light">Attitude Tshirt</h2>
+                        <p class="font-label-caps text-label-caps text-primary"><span style="font-size: 14px; font-weight: 600;">₹549</span></p>
+                    </div>
+                </div>
+                <!-- Product 6: Balenciaga Tshirt -->
+                <div class="group product-card" data-current-index="0" data-product-id="6">
+                    <div class="relative aspect-[3/4] mb-6 overflow-hidden bg-surface-container-low group/slider">
+                        <div class="slider-container flex w-full h-full overflow-hidden" id="slider-container-6">
+                            <img alt="Balenciaga Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2_dP2viCQY91bWHz7Y_yw8KJj1T55j2M7jDlxXCX648KV1479MVStgXvTvOGz3402offiwF4ooXFW2Dx0U47aQJczzqKfUx8-JkIuzA_p5F66LsS49Ts2xHVwkcyD4j4YKPL8lyedGteFvlBhudf7OaRhw7qFVSFZCUDfQfU4zP3WG60XTOpVHegghlEkiqpVp5Nwx6X4EX4A2SsvxvkRA0dQKkbYjT_cohOU2T3t5BBFwilNh8b3rdq0m189NQMOmxqESBRBJPA">
+                        </div>
+                        <div class="quick-view absolute inset-x-0 bottom-0 opacity-0 transform translate-y-4 transition-all duration-300 bg-surface/80 backdrop-blur-md p-4 z-30 group-hover/slider:opacity-100 group-hover/slider:translate-y-0">
+                            <button onclick="event.stopPropagation(); window.location.href='product.html?id=' + this.closest('.product-card').getAttribute('data-product-id');" class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:bg-primary-container active:scale-[0.98] transition-all uppercase tracking-[0.2em] shadow-lg">BUY NOW</button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="text-on-surface mb-1 font-display-lg text-xl font-light">Balenciaga Tshirt</h2>
+                        <p class="font-label-caps text-label-caps text-primary"><span style="font-size: 14px; font-weight: 600;">₹499</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full py-24 bg-surface-container-lowest border-t border-surface-variant">
+        <div class="flex flex-col items-center justify-center px-8 md:px-20 max-w-[1440px] mx-auto">
+            <div class="font-display-lg text-[32px] md:text-[40px] text-primary uppercase mb-12 tracking-[0.15em] font-bold">
+                DYNASTY WEAR'S
+            </div>
+            <div class="flex flex-wrap justify-center gap-x-12 gap-y-6 mb-12">
+                <a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-all uppercase tracking-[0.2em]" href="#">PRIVACY POLICY</a>
+                <a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-all uppercase tracking-[0.2em]" href="#">TERMS OF SERVICE</a>
+                <a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-all uppercase tracking-[0.2em]" href="#">SHIPPING &amp; REPLACEMENT</a>
+                <a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-all uppercase tracking-[0.2em]" href="#">CONTACT</a>
+            </div>
+            <p class="font-label-caps text-[10px] text-on-surface-variant/50 tracking-[0.3em] uppercase mb-12">
+                Â© 2024 DYNASTY WEAR'S. ALL RIGHTS RESERVED.
+            </p>
+            <div class="flex gap-4">
+                <a class="w-10 h-10 border border-secondary-container/20 flex items-center justify-center hover:border-primary transition-colors text-on-surface-variant hover:text-primary" href="#">
+                    <span class="material-symbols-outlined text-[16px]" data-icon="share">share</span>
+                </a>
+                <a class="w-10 h-10 border border-secondary-container/20 flex items-center justify-center hover:border-primary transition-colors text-on-surface-variant hover:text-primary" href="#">
+                    <span class="material-symbols-outlined text-[16px]" data-icon="public">public</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        document.querySelectorAll('.size-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.size-btn').forEach(b => {
+                    b.classList.remove('active', 'bg-primary', 'text-on-primary');
+                    b.classList.add('text-on-surface-variant');
+                });
+                this.classList.add('active', 'bg-primary', 'text-on-primary');
+                this.classList.remove('text-on-surface-variant');
+            });
+        });
+
+        function toggleAccordion(id) {
+            const content = document.getElementById('content-' + id);
+            const icon = document.getElementById('icon-' + id);
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                icon.textContent = 'add';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.classList.add('open');
+                icon.textContent = 'remove';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/ecommerce.js?v=2"></script>
+</body>
+</html>
+

@@ -1,0 +1,454 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>COLLECTIONS | DYNASTY WEAR'S</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#343535",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "surface-container-low": "#1b1c1c",
+                    "on-primary-fixed-variant": "#574500",
+                    "tertiary-container": "#b4b2b2",
+                    "surface-container": "#1f2020",
+                    "primary-container": "#d4af37",
+                    "surface-container-lowest": "#0d0e0f",
+                    "on-primary-fixed": "#241a00",
+                    "secondary-fixed-dim": "#c9c6c5",
+                    "surface": "#121414",
+                    "on-tertiary-container": "#454544",
+                    "on-tertiary": "#313030",
+                    "outline": "#99907c",
+                    "error": "#ffb4ab",
+                    "on-primary": "#3c2f00",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-surface-variant": "#d0c5af",
+                    "inverse-on-surface": "#2f3031",
+                    "background": "#121414",
+                    "on-error-container": "#ffdad6",
+                    "primary-fixed": "#ffe088",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "tertiary": "#d0cdcd",
+                    "secondary": "#c9c6c5",
+                    "surface-container-high": "#292a2a",
+                    "surface-dim": "#121414",
+                    "surface-container-highest": "#343535",
+                    "primary": "#f2ca50",
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-error": "#690005",
+                    "on-primary-container": "#554300",
+                    "on-surface": "#e3e2e2",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-secondary": "#313030",
+                    "secondary-container": "#474646",
+                    "surface-bright": "#383939",
+                    "inverse-primary": "#735c00",
+                    "on-secondary-fixed-variant": "#474646",
+                    "surface-tint": "#e9c349",
+                    "secondary-fixed": "#e5e2e1",
+                    "inverse-surface": "#e3e2e2",
+                    "error-container": "#93000a",
+                    "on-background": "#e3e2e2",
+                    "outline-variant": "#4d4635",
+                    "on-secondary-container": "#b7b4b4",
+                    "primary-fixed-dim": "#e9c349"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "160px",
+                    "gutter": "32px",
+                    "container-max": "1440px",
+                    "margin-mobile": "24px",
+                    "margin-desktop": "80px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Bodoni Moda"],
+                    "display-lg": ["Bodoni Moda"],
+                    "label-caps": ["DM Sans"],
+                    "headline-lg": ["Bodoni Moda"],
+                    "body-md": ["DM Sans"],
+                    "body-lg": ["DM Sans"],
+                    "display-lg-mobile": ["Bodoni Moda"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                    "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .product-card:hover .quick-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .product-card:hover .slider-nav {
+            opacity: 1;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0d0e0f;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #f2ca50;
+        }
+        .swatch-btn.active {
+            box-shadow: 0 0 0 2px #121414, 0 0 0 4px #f2ca50;
+            transform: scale(1.1);
+        }
+        .slider-container {
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .slider-container::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary min-h-screen flex flex-col font-body-md text-body-md overflow-x-hidden">
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-variant flex justify-between items-center px-margin-desktop h-20 transition-all duration-300">
+<div class="font-display-lg text-headline-lg tracking-tighter text-primary">DYNASTY WEAR'S</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 hover:text-primary transition-colors duration-300" href="#">Collections</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Atelier</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Heritage</a>
+</div>
+<div class="flex items-center gap-6">
+<a href="cart.html" class="relative scale-95 active:scale-90 active:opacity-80 transition-all text-on-surface-variant hover:text-primary block">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="cart-count hidden absolute -top-1 -right-2 bg-primary text-on-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full">0</span>
+</a>
+<a href="account.html" class="scale-95 active:scale-90 active:opacity-80 transition-all text-on-surface-variant hover:text-primary block">
+<span class="material-symbols-outlined">person</span>
+</a>
+</div>
+</nav>
+<main class="flex-grow pt-32 pb-section-gap px-margin-desktop">
+<header class="mb-16">
+<nav class="mb-4 flex items-center gap-2">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary uppercase" href="index.html">Home</a>
+<span class="material-symbols-outlined text-[12px] text-surface-variant">chevron_right</span>
+<span class="font-label-caps text-label-caps text-primary uppercase">Collections</span>
+</nav>
+<h1 class="font-display-lg text-headline-lg md:text-display-lg text-on-surface">COLLECTIONS</h1>
+</header>
+<div class="flex flex-col lg:flex-row gap-gutter">
+<aside class="w-full lg:w-64 flex-shrink-0 space-y-10">
+<div>
+<h3 class="font-label-caps text-label-caps text-primary mb-6 border-b border-surface-variant pb-2">Size</h3>
+<div class="grid grid-cols-4 gap-2">
+<button class="h-10 border border-primary bg-primary/10 flex items-center justify-center font-label-caps text-label-caps text-primary transition-all active:scale-95">M</button>
+<button class="h-10 border border-surface-variant flex items-center justify-center font-label-caps text-label-caps text-on-surface-variant hover:border-primary hover:text-primary transition-all active:scale-95">L</button>
+<button class="h-10 border border-surface-variant flex items-center justify-center font-label-caps text-label-caps text-on-surface-variant hover:border-primary hover:text-primary transition-all active:scale-95">XL</button>
+</div>
+</div>
+</aside>
+<div class="flex-grow">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-24 gap-x-12" id="main-product-grid">
+<!-- Product 4: Puma Printed Tshirt -->
+<div class="group product-card" data-current-index="1" data-product-id="4">
+<div class="relative aspect-[3/4] mb-6 overflow-hidden bg-surface-container-low group/slider">
+<div class="slider-container flex w-full h-full overflow-hidden" id="slider-container-4">
+<img alt="Puma Printed Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjbc8x0nxIFSJQzfmYVh-sqkjEYnUDuIAZWMwsi8iIpR4i8Lc0q87Zk1UB8sL9Umtj13c3MqG76Y9X0rFRVMrL4HBro6cGV4VS_zR8i6cp_AzhX-fLPtu_L-dl-TcEB3IDjGhHUpz0zN03bnkxGQggsxQnS8FyGkRSaUsMHPch7YeB8nFYJdW2S5u6W4yqDyqnlDjOngZEbOhv0-XH2Yts1vn5y7dX3b8iBj1wW6qHmf84WxaeWyvlTmsc3THYuylXDkXAsifA3EM">
+<img alt="Puma Printed Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApREv3XVqJhM5p-PMCiwC5dsaUC_iYJ-McMFdYPMdz9ayRLKSMSbPX7HtRox742aKnD4ZqKdnC8cxaBh2AWmmx5d2mwm5_BEBC-LpFtTTBi26Qi3ZPj1_gwoJ8-ZGj2ictpkYcqMGchE0UcyV733uyjwOYInGbn5o47Ds8E53i9xlwgRchDOWVZu8yVdVnzM521B4yNL-wqXllzm41Jd3kCk9kwTyh7BxqSZlkMfpUvS42Zr0R9rgI2Zip9lj8e0k0LaglzVaKH6A">
+<img alt="Puma Printed Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMKH3jO5JHuF6ufep90awke2jKmiZR0-UYKLPFqK6xyaD667GbtNQCcfy1_0ks8_ssKgBXxWjYv2KomF7OW4K1Ie5pkc97En86XhnxM8Tb6jLjtH2DHwvu1L3aHCYdgwNigv3jqyXYjU6Lcw40TWaMHN-msozy1M312-gd7IyWVQFi256wqCqeX3q_pRYoC8YDd-OGvSSqGWtuhM-3BqFwFdcduIsTJpV2mEZQveLPlNRbKY4HHvEyDEowk1Bcj3t2Akiekx_8LOM">
+<img alt="Puma Printed Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMieDiyb-R2k-uoxT0HenM3Oc6QJabiNO9aL-M393iTNHIIjRe5ixzyIywwx09htFy9q_z2t1AVijKJ84hU4A5U5l4vNfO3ADv74TiW9q6Ot4VbQY5UIMp6t6Trtxb9OzemgaaVJS-CNTjOTYfNnfXRXhXlqylDVAhDFyk52WOT0agwuaQq_wfjTodVayHdeTQcEcEVacEzax4oW_iUMW-8CGATyGEzY7iL0uUlmcfKpXWRPlD6cHxuB2Pcgdfni0tUKZ9qrNlUk4">
+<img alt="Puma Printed Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa1VcEX8RETBEcKGLMGJGDH_DTnCn2ubMs37LqUkP4H9qssgyVH4SUelbJQzi7OByweiSHVk4Heu7G-1TTV3XH119SwPLk6VBRFi8GZn3MBsZ_StgzTZtltUENvUG4rys1eYw-0RBzVrBSf32gGTLYDYenFE-vZhpjEqjGcssJPiQXmjE1c33N-qwx099qMvkxcpb50kSi2jn2mrPpUl38IZ_tGGnlq62WU6aDhhre3sMNQuOlgrqcPX-s6v6_WloMDM8sur2D0CY">
+<img alt="Puma Printed Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3isilJtKVg7pocza_QDZcshgHUYcNBELjvC441nYtXTgIlQnXLYCvG2HoK07EltXeJO08fRGCwn247tTPbyuSekzYKyXLGdCxhItI-7qs6jotery5VqCJ5R8l7YoeWuf5wZWeUGYvdZc-ejyhfM7-bhZi0h9hJwgm7bMqrrVR9esrE4iZGK5MNNQ6rvFi-Cw9n0D-8snPRxIWMjaDOiMsw3QHd1nCv31Vj5XjEVNOuBiPVIydi6h-oA37WBNXyZIvCe4W5ojoKWM">
+<img alt="Puma Printed Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2RpwlV-k4wl9kPRiJhx5pK0x0oZdVtWRxqoUGhNiTBIvSxB-VVa4kVKbbqnDEESz4EjMnnsXY_CakvFvvUl3ejJ-HN6xOgQ0NvJKWwnEa0RvK7-76N0m7cL44PdH2fEMhRSZrAMwOxFQWaFMedQFUX6ksqpvlDCtgKZuRNYi9HttHHl947nNxm_2TbU8wz84y6jnBDglcpThwCNa8bEqZHUdcYbNDX18QxUy9_BuirdVa2BHcO8uzhSz52cDiXNdubwqCsMzka0k">
+<img alt="Puma Printed Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcaQPHp_OmjLi9JCY_bIOm_hrYRoRD5bMJGRhJYtsBgyMmX6Ji10HgrHF4mVC-mTRnLGuymppvaZwu-EWQ5kvkCqadFsgsEcrrU_QO1FsbkoCQB-EqrvlvbUTfxp35DWUamSp4xyH9GCglz7wSNQ7CJBVLpTLkiltlDKDsVVcDbYGVy1uykemG5b-q_IIiZEJy1Ow6GiDbTieQ1RVVk2cu0oGTDE5i2mRFSVr4U0beyHEChLgmmJdmru9jkyEYlMeNoPBezXAKE1k">
+<img alt="Puma Printed Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCMXyCCtt-piHvaLLJWoUFbN7lVy24cPIRvZy2KVvsMSYi0LfwltMKOSmIT0Mp5zNmuSysG_T-VPwGhCUFZmkXckPHc8IYGnKi2LgluQkskm4hZkn1OzfStUKNcYLSHPwh-42xEPWbchiuMRJ_v_nDQOjAkgt_gcUHZBY8B_jhQR3QBws8LPld9IfczgpdHV0g_NVl4_DCJndTaz9N4RVFbKZ2K4e69qDsd_AROyM9jrUTQnI0q6mziHai3DcK9KUhpKY-XqPzrt8">
+<img alt="Puma Printed Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkjXBlJAkniFmYgLYYfupVQx6AU2zd8DsrNFwHyYv69E5dmsuQGSKATmZIoQb-3DdJqHSFArJc-G4KsFo-Rra0wLkHoG0d2lPqRWPiqaYF__4dy3n_dHEGKiR1HAfJNMf-ZD3DvJj2q0SvhSebLhnG2bAWKv5vvd7C_IX-LZIdmWjvuKI1xrpdtBDbu3vJR6aPMhPBn0ninB4AWCatVunpWVkVeqk4U0uaIDFck4AbgX-xyMNTnL6Z37r_qoGjIB5A_zyhC5ZIIWM">
+<img alt="Puma Printed Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlJymkdCRNHPHRUWWUYOl5Wmh_7xeKWoq7TyGFBDvolZrcSApF_PLXZpt48Mrrke4oCeTfO0kUN8bikQ2xqbKlJaAKtcyarHB4UA7P18YfPaX-zwa0EZiaQsOTh2oZ5OUKJRrQv1OpG19JQVf2w8bn7U2I4te_kBNk3ae3cSveFjddTKxx3yU_J2xXBTBFKdDINditBSfc7TRkY7buDRKgp7_2M9mW7cbPtgFD1QBIe9rbFk7orzksQBW7A0pWjksy0IxE8y0n_XU">
+<img alt="Puma Printed Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmVEPQ20cF9M5j_yt59vzKZdLSo3ZMlBizs8n6-euf9ln1tIJWg44oy_CebnSbEAvH4JHR-6aO_lWQGcblDkALm_5Bdp2Gpt1vISZuhtmkmdJC5DRB4-4gx5mmwyzHQ0UYWLbznkj6I5KxjzpNAJbl60DYD5G_FGz1cdhOi6ynL_iTebiG4cOrRb837mNQSMXsviQXAytg-yXxTQ33oPbYfTJsmnIEGndfkz7kdLDx9vIh1TrNQE4NI_TjKSKkBxGfLq469geQ04I">
+</div>
+<div class="absolute top-4 left-4 bg-primary text-on-primary font-label-caps text-[10px] px-3 py-1 tracking-widest z-20">LIMITED RELEASE</div>
+<div class="slider-nav absolute inset-0 flex items-center justify-between px-2 opacity-0 transition-opacity duration-300 pointer-events-none z-20">
+<button class="prev-btn p-2 bg-surface/60 backdrop-blur-sm text-primary rounded-full hover:bg-primary hover:text-on-primary pointer-events-auto transition-all active:scale-90" onclick="moveSlider(4, -1)">
+<span class="material-symbols-outlined !text-xl">chevron_left</span>
+</button>
+<button class="next-btn p-2 bg-surface/60 backdrop-blur-sm text-primary rounded-full hover:bg-primary hover:text-on-primary pointer-events-auto transition-all active:scale-90" onclick="moveSlider(4, 1)">
+<span class="material-symbols-outlined !text-xl">chevron_right</span>
+</button>
+</div>
+<div class="absolute top-4 right-4 bg-surface/60 backdrop-blur-md px-3 py-1 z-20 border border-surface-variant/50">
+<span class="pagination-indicator font-label-caps text-[10px] text-primary tracking-widest uppercase" id="pagination-4">2 / 12</span>
+</div>
+<div class="quick-view absolute inset-x-0 bottom-0 opacity-0 transform translate-y-4 transition-all duration-300 bg-surface/80 backdrop-blur-md p-4 z-30">
+<button onclick="event.stopPropagation(); window.location.href='product.html?id=' + this.closest('.product-card').getAttribute('data-product-id');" class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:bg-primary-container active:scale-[0.98] transition-all uppercase tracking-[0.2em] shadow-lg">BUY NOW</button>
+</div>
+</div>
+<div class="text-center">
+<h2 class="text-on-surface mb-1 font-display-lg text-2xl font-light">Puma Printed Tshirt</h2>
+<p class="font-label-caps text-label-caps text-primary mb-4"><span class="" style="font-size: 16px; font-weight: 600;">₹549</span></p>
+<div class="flex justify-center gap-3 mt-4">
+  <button class="swatch-btn w-6 h-6 rounded-full bg-[#1c1c1c] border border-surface-variant active:scale-90 transition-all hover:scale-110 active" data-color="Black" onclick="goToSlide(4, 0)" title="Black"></button>
+  <button class="swatch-btn w-6 h-6 rounded-full bg-[#F5F5DC] border border-surface-variant active:scale-90 transition-all hover:scale-110" data-color="Cream" onclick="goToSlide(4, 2)" title="Cream"></button>
+  <button class="swatch-btn w-6 h-6 rounded-full bg-[#4A6FB4] border border-surface-variant active:scale-90 transition-all hover:scale-110" data-color="Blue" onclick="goToSlide(4, 4)" title="Blue"></button>
+  <button class="swatch-btn w-6 h-6 rounded-full bg-[#C2B280] border border-surface-variant active:scale-90 transition-all hover:scale-110" data-color="Tan" onclick="goToSlide(4, 6)" title="Tan"></button>
+  <button class="swatch-btn w-6 h-6 rounded-full bg-[#B22222] border border-surface-variant active:scale-90 transition-all hover:scale-110" data-color="Red" onclick="goToSlide(4, 8)" title="Red"></button>
+  <button class="swatch-btn w-6 h-6 rounded-full bg-[#6A5ACD] border border-surface-variant active:scale-90 transition-all hover:scale-110" data-color="Purple" onclick="goToSlide(4, 10)" title="Purple"></button>
+</div>
+</div>
+</div>
+<!-- Product 1: No Risk No Story Tshirt -->
+<div class="group product-card" data-current-index="0" data-product-id="1">
+<div class="relative aspect-[3/4] mb-6 overflow-hidden bg-surface-container-low group/slider">
+<div class="slider-container flex w-full h-full overflow-hidden" id="slider-container-1">
+<img alt="No Risk No Story Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn7L9upK0GShi7MboLz0fJFmeBJnzYUUJPzON-CgEtEtC1X14K-MFtuxHgDA-IhduaAcvctO0IPoJLcExeqbknXdA6cuFZTEbfmiJXgAVhs9Yr0m7Cr_CNYAcx5zlFM2wHLS_0uoJTXCa8ntNwLUpycOEU34qbLtJaF25icjuASH2eCFxVdcgGjPONMlfEDX0tw7iQ8bDjufLkN_4cYjvrQQzdN-l2RzvKsH4YFrAqhomXvGnJGl5VPCpd4XToizfsPKTXc_ox438">
+<img alt="No Risk No Story Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU_RnJ3whcDOEjkJYYpZ_fRPmE70DETUVyC8r7ldTgxbkAo01RDI-yVq5z0SKFniLRB3PcRntwWD07p53NNNZdSmHfyYW6wsitrc9KTatOtmzNOEucDtSb4g7PTtIXeawZBIiLhe3deg0GZJNuPAdqiF3-4CE1HpHxM1tEJEc07A66mFzn7PEkY-dZmECgJQhnKjs7bJnJh2d_yZz7apPA1-HxHVx3IIe005-nHVVqDlwth5XF58ngeyivbGn5WpT23h-8r1FGHE8">
+</div>
+<div class="absolute top-4 left-4 bg-primary text-on-primary font-label-caps text-[10px] px-3 py-1 tracking-widest z-20">LIMITED RELEASE</div>
+<div class="slider-nav absolute inset-0 flex items-center justify-between px-2 opacity-0 transition-opacity duration-300 pointer-events-none z-20">
+<button class="prev-btn p-2 bg-surface/60 backdrop-blur-sm text-primary rounded-full hover:bg-primary hover:text-on-primary pointer-events-auto transition-all active:scale-90" onclick="moveSlider(1, -1)">
+<span class="material-symbols-outlined !text-xl">chevron_left</span>
+</button>
+<button class="next-btn p-2 bg-surface/60 backdrop-blur-sm text-primary rounded-full hover:bg-primary hover:text-on-primary pointer-events-auto transition-all active:scale-90" onclick="moveSlider(1, 1)">
+<span class="material-symbols-outlined !text-xl">chevron_right</span>
+</button>
+</div>
+<div class="absolute top-4 right-4 bg-surface/60 backdrop-blur-md px-3 py-1 z-20 border border-surface-variant/50">
+<span class="pagination-indicator font-label-caps text-[10px] text-primary tracking-widest uppercase" id="pagination-1">1 / 2</span>
+</div>
+<div class="quick-view absolute inset-x-0 bottom-0 opacity-0 transform translate-y-4 transition-all duration-300 bg-surface/80 backdrop-blur-md p-4 z-30">
+<button onclick="event.stopPropagation(); window.location.href='product.html?id=' + this.closest('.product-card').getAttribute('data-product-id');" class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:bg-primary-container active:scale-[0.98] transition-all uppercase tracking-[0.2em] shadow-lg">BUY NOW</button>
+</div>
+</div>
+<div class="text-center">
+<h2 class="text-on-surface mb-1 font-display-lg text-2xl font-light">No Risk No Story Tshirt</h2>
+<p class="font-label-caps text-label-caps text-primary"><span class="" style="font-size: 16px; font-weight: 600;">₹549</span></p>
+</div>
+</div>
+<!-- Product 2: Break Rules Tshirt -->
+<div class="group product-card" data-current-index="0" data-product-id="2">
+<div class="relative aspect-[3/4] mb-6 overflow-hidden bg-surface-container-low group/slider">
+<div class="slider-container flex w-full h-full overflow-hidden" id="slider-container-2">
+<img alt="Break Rules Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLg-EWYDIJuiiz-D_SMCMJzK9-FQj6QBWILL0qo-Oag1lsYYxa44Xkx_sWrrEPyYVoX4XBSuq7-ejrmISs1oUlzsMYjBwIm8OOrXkdOpNZO_Ndmi8X1xc6nODnxDghJ4T_ToLlajEcfQ8gWpdvPGaXRl-l5oLX1H58OS6I5W62zRX4SY9pGDd-Ju2eieoKCewwxm2juHwAdErO8_HlfFOUqWU6tbYkFNRr7Y8_v-GIbc_swlmqoXAxHGhPfNn_bj7oi1XEw1RsLnE">
+<img alt="Break Rules Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVTknUk3oNZ-aboH_RHvsnFitUImS5zK13xvR6JZI-4dA1s5ibmcwxafvZnlrp2lHBMtSYnEPU8hqaZATd5gD0xw5c794ulLrF2WuOGtfmdbcErk3E2e6NO2G412kBrAE50JTAVEeuOo9_rInzn7JHyNz0l6KC8dIceFHpHoNSlqaCCeF3iHVCSjeU7vZ1UpvzyDg0vmVXTutPz5Hpf7CWYAwcYo_w8wfXGIZrhJCeWai8o3qnJeJsFNxbK2bbTCyzARtRnCy6HPs">
+</div>
+<div class="absolute top-4 left-4 bg-primary text-on-primary font-label-caps text-[10px] px-3 py-1 tracking-widest z-20">LIMITED RELEASE</div>
+<div class="slider-nav absolute inset-0 flex items-center justify-between px-2 opacity-0 transition-opacity duration-300 pointer-events-none z-20">
+<button class="prev-btn p-2 bg-surface/60 backdrop-blur-sm text-primary rounded-full hover:bg-primary hover:text-on-primary pointer-events-auto transition-all active:scale-90" onclick="moveSlider(2, -1)">
+<span class="material-symbols-outlined !text-xl">chevron_left</span>
+</button>
+<button class="next-btn p-2 bg-surface/60 backdrop-blur-sm text-primary rounded-full hover:bg-primary hover:text-on-primary pointer-events-auto transition-all active:scale-90" onclick="moveSlider(2, 1)">
+<span class="material-symbols-outlined !text-xl">chevron_right</span>
+</button>
+</div>
+<div class="absolute top-4 right-4 bg-surface/60 backdrop-blur-md px-3 py-1 z-20 border border-surface-variant/50">
+<span class="pagination-indicator font-label-caps text-[10px] text-primary tracking-widest uppercase" id="pagination-2">1 / 2</span>
+</div>
+<div class="quick-view absolute inset-x-0 bottom-0 opacity-0 transform translate-y-4 transition-all duration-300 bg-surface/80 backdrop-blur-md p-4 z-30">
+<button onclick="event.stopPropagation(); window.location.href='product.html?id=' + this.closest('.product-card').getAttribute('data-product-id');" class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:bg-primary-container active:scale-[0.98] transition-all uppercase tracking-[0.2em] shadow-lg">BUY NOW</button>
+</div>
+</div>
+<div class="text-center">
+<h2 class="text-on-surface mb-1 font-display-lg text-2xl font-light">Break Rules Tshirt</h2>
+<p class="font-label-caps text-label-caps text-primary"><span class="" style="font-size: 16px; font-weight: 600;">₹549</span></p>
+</div>
+</div>
+<!-- Product 3: Loose Lips Tshirt -->
+<div class="group product-card" data-current-index="0" data-product-id="3">
+<div class="relative aspect-[3/4] mb-6 overflow-hidden bg-surface-container-low group/slider">
+<div class="slider-container flex w-full h-full overflow-hidden" id="slider-container-3">
+<img alt="Loose Lips Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFAC4aNTfKVTc5XVSSfJNjVL5_jwz0xUXF8bCizqncNFEvWJ1Zr_iPKWPT4DTkXaOjb8cWqe3GDPWZjw716PHrXgDzUTBiIqz44i2W8Edwe7EKzfmIK5jQ8Rr3dpgUCcpVzzFYMFf_pwHcQo2Iyp6YjYef-7SxXQJtqfrkRHl63SzeyrA4wseKNiy4duMsZjgpPvNKi9asOFYk_W7wcaaJ1OtUU50ozfDOFMHjv3yG2KAYeZSgHvKRgG6TDKT-ka6cjMsRTwvImIA">
+<img alt="Loose Lips Tshirt" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArkyy6Y5sDPjIahPp84Zpc7QCBLpgZRzQwFQhLgsEss6BdskUZb32MEK4q8perLuvdgsIjwpvroFkm5khzeCDG0n0Us4poDLHH6HxCz0cRRcAzvA6MG7zEodp2qIu2kOEFrvlvZlpHMIbPnl1Wef8Lvwp_n_G14wbfRE328DCaiKUtTo9HXMXlxWWKa9Ur_smnWxCQb4wOOVPNeHRI662u1sVYCnyCIAbl0dTRZz3GwBGLmS1LpYz3mE7tcv_tkq_PqUHiqzspWRE">
+</div>
+<div class="absolute top-4 left-4 bg-primary text-on-primary font-label-caps text-[10px] px-3 py-1 tracking-widest z-20">LIMITED RELEASE</div>
+<div class="slider-nav absolute inset-0 flex items-center justify-between px-2 opacity-0 transition-opacity duration-300 pointer-events-none z-20">
+<button class="prev-btn p-2 bg-surface/60 backdrop-blur-sm text-primary rounded-full hover:bg-primary hover:text-on-primary pointer-events-auto transition-all active:scale-90" onclick="moveSlider(3, -1)">
+<span class="material-symbols-outlined !text-xl">chevron_left</span>
+</button>
+<button class="next-btn p-2 bg-surface/60 backdrop-blur-sm text-primary rounded-full hover:bg-primary hover:text-on-primary pointer-events-auto transition-all active:scale-90" onclick="moveSlider(3, 1)">
+<span class="material-symbols-outlined !text-xl">chevron_right</span>
+</button>
+</div>
+<div class="absolute top-4 right-4 bg-surface/60 backdrop-blur-md px-3 py-1 z-20 border border-surface-variant/50">
+<span class="pagination-indicator font-label-caps text-[10px] text-primary tracking-widest uppercase" id="pagination-3">1 / 2</span>
+</div>
+<div class="quick-view absolute inset-x-0 bottom-0 opacity-0 transform translate-y-4 transition-all duration-300 bg-surface/80 backdrop-blur-md p-4 z-30">
+<button onclick="event.stopPropagation(); window.location.href='product.html?id=' + this.closest('.product-card').getAttribute('data-product-id');" class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:bg-primary-container active:scale-[0.98] transition-all uppercase tracking-[0.2em] shadow-lg">BUY NOW</button>
+</div>
+</div>
+<div class="text-center">
+<h2 class="text-on-surface mb-1 font-display-lg text-2xl font-light">Loose Lips Tshirt</h2>
+<p class="font-label-caps text-label-caps text-primary"><span class="" style="font-size: 16px; font-weight: 600;">₹549</span></p>
+</div>
+</div>
+<!-- Product 5: Evening Velvet Suite -->
+<div class="group product-card" data-current-index="1" data-product-id="5">
+<div class="relative aspect-[3/4] mb-6 overflow-hidden bg-surface-container-low group/slider">
+<div class="slider-container flex w-full h-full overflow-hidden" id="slider-container-5">
+<img alt="Evening Velvet Suite" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3ExH_R15wA2C56cSUvapKKqdMJppLzn4y7Rb_h_wq7tbmbR5GyA2W5DQKq8YaB-JpD-zYBTQmMQERyqPKbkhnlznDICDFrCeOwhaz6JK2f5wYMSv067PfoFIEWUF03JbHy9LdfZufT9XHrkbh_VZ-8dGVNMb78B3-Gp0GBJ-DKkR2KKfUcH7Gq9WyvXFjpFvqwtZp4jGFb83ABSElSH55oh4wvdoAiOhtMUUkYWTIS66BN3-O5MpLILIZuzcdUrWuCE652Ylc-X0">
+<img alt="Evening Velvet Suite" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfqlovGkpQQlu0T4mqx0kdRMcj58ZTgmCUacvR0flLsyX9VWRJgtHqS9w6g95QkS2oaGqxaVtMDFcJaZUy-vAcxplGucmTSIObmr3ZDILSiqa8ODFlxbar4tqxjOgV5Ea52mAlXsi3pgebeJcNge7LBpcDl_ovR-Kc3Fuat-SI3eEOB2jlzJRD6zRAXVFjVAe9kxu8NDhjdJu7MNvDWL6swKY9f7Gjwei8Y4aNSOlhZswUdHOhAswlGHshLiJKmpuQdUtI4D4gN9c">
+</div>
+<div class="absolute top-4 left-4 bg-primary text-on-primary font-label-caps text-[10px] px-3 py-1 tracking-widest z-20">LIMITED RELEASE</div>
+<div class="slider-nav absolute inset-0 flex items-center justify-between px-2 opacity-0 transition-opacity duration-300 pointer-events-none z-20">
+<button class="prev-btn p-2 bg-surface/60 backdrop-blur-sm text-primary rounded-full hover:bg-primary hover:text-on-primary pointer-events-auto transition-all active:scale-90" onclick="moveSlider(5, -1)">
+<span class="material-symbols-outlined !text-xl">chevron_left</span>
+</button>
+<button class="next-btn p-2 bg-surface/60 backdrop-blur-sm text-primary rounded-full hover:bg-primary hover:text-on-primary pointer-events-auto transition-all active:scale-90" onclick="moveSlider(5, 1)">
+<span class="material-symbols-outlined !text-xl">chevron_right</span>
+</button>
+</div>
+<div class="absolute top-4 right-4 bg-surface/60 backdrop-blur-md px-3 py-1 z-20 border border-surface-variant/50">
+<span class="pagination-indicator font-label-caps text-[10px] text-primary tracking-widest uppercase" id="pagination-5">2 / 2</span>
+</div>
+<div class="quick-view absolute inset-x-0 bottom-0 opacity-0 transform translate-y-4 transition-all duration-300 bg-surface/80 backdrop-blur-md p-4 z-30">
+<button onclick="event.stopPropagation(); window.location.href='product.html?id=' + this.closest('.product-card').getAttribute('data-product-id');" class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:bg-primary-container active:scale-[0.98] transition-all uppercase tracking-[0.2em] shadow-lg">BUY NOW</button>
+</div>
+</div>
+<div class="text-center">
+<h2 class="text-on-surface mb-1 font-display-lg text-2xl font-light">Attitude Tshirt</h2>
+<p class="font-label-caps text-label-caps text-primary"><span class="" style="font-size: 16px; font-weight: 600;">₹549</span></p>
+</div>
+</div>
+<!-- Product 6: Midnight Tuxedo -->
+<div class="group product-card" data-current-index="2" data-product-id="6">
+<div class="relative aspect-[3/4] mb-6 overflow-hidden bg-surface-container-low group/slider">
+<div class="slider-container flex w-full h-full overflow-hidden" id="slider-container-6"><img alt="Obsidian &amp; Gold Luxury" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2_dP2viCQY91bWHz7Y_yw8KJj1T55j2M7jDlxXCX648KV1479MVStgXvTvOGz3402offiwF4ooXFW2Dx0U47aQJczzqKfUx8-JkIuzA_p5F66LsS49Ts2xHVwkcyD4j4YKPL8lyedGteFvlBhudf7OaRhw7qFVSFZCUDfQfU4zP3WG60XTOpVHegghlEkiqpVp5Nwx6X4EX4A2SsvxvkRA0dQKkbYjT_cohOU2T3t5BBFwilNh8b3rdq0m189NQMOmxqESBRBJPA"><img alt="Obsidian Back" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvxIDRANyVU1a52qFyqIyfU7q7GZkMwEucAIRhzMa8t5lPQwGL9ObZo1XEOFDuYMFSgYWsXaNU8DIvut8isRPpVAiR1tMGGoA0coGGuS-F-H0JOSNyhWqng8iVTe09PVw8zjopMpRXuIvgL82xrCMgkqOd5TsC-qUYqPNyI8c0JVH10qVYmaD_bV5lqNYB3fvS0GK7pCWUBRDL_pGt88C4Ps4L8z0mQ_MYMJbIxRue-q6CHTsDkAq9IZT2QMyonn3DvXMHV4rJVnc"><img alt="Cream Front" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfnkONatcptVduP7vkfv81etakQje1Z-t2J0LFYM8BY-9J31AyR8nbRNldUGkFUOL0iITgxY7C9gR_uB4K8TlMf30Z59N9WHz7Mwa-rrGXJdwvtMqhExjpRbe72S5fm7wywIzHh_o7oIiHMzz-zTeTiG43xDaS1LPzJSV478Hj1Ud0Va9y8uB9rCC7W4TwFBXHUHnBqR1iEGfGmeUi7CC0Bhsg1YEhZtj6KZfkBdXGDCvbCLUB8TxNccvmtb7Bh2H4RAhkEIWS4ks"><img alt="Balenciaga Brown Tshirt Back View" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKjzLIKad9Pckxo7IFwYTufp5e3lYV5UJilONGAT9KbQTzwoQGplZ4-0BqADO7tnHORzXYLCjRfAeBDfh--qmqLj_wvdiobsgAJ2uLiqsdUTGDkmTp0N17p7X1xxId_wVP0OgC3dvmbU1egpQ06-Kjy_2PR0oXJEm692qFCHeAOyNQqnMTyVQ0s-1M25c9V42Lmw4TKMu7kYwfpwozvY-rIGHhd4kqQQHbal6M4Tyy3F7aq6FTwebIytkca3sCW6AdqvfaUQGbAHA"><img alt="Sage Front" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1Zt3eu1JUDHZseNM_phDdM7lSwk5jIp8TmkpnlP5zXS108H3HCTjm7FmD2U4BhMDFmrb-Jg7YcODpeIrZA_IWuFwILQjtxAQdSr85RZWKEVd211M1ok3Psn8nmtJcWSyE0FPU4zUuh5l-0uv-MR68m-hFLruVI2KZT5fEGGmckXrlV6qU8Qy2i0tlMTWJ0qk-Gysxc63x2kaxkJBKNm-6CWlVO4THWts3LB2FhzHNQcTXkAvHFsGwTKX_I00RXySqV5Mrq4YtL5w"><img alt="Sage Back" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHPj6tmo7nZSsPWbbmRbCj3DuQYcdrbBDcQwT6cqs9rDswquvZ8z0YzENDv-9VaVijFgSKx_XtgJniWEbWopJKHOWOd5WCo6OBEgkZiL5voHgAkpTo6vAu5la-JnxtR1RzCYMr_e2ghQmd7RS4zWO_v-Oy4inK7n-jG9SuOCM2O4pmyXL8fZOJfDFX_crxwuv_fDKIBMTk7wacIuz_yrzKrE0QeOQUjlHoEM_4m5_beLjC8oUaoIYubttcEBJSnAPGdZsxVZTLRJM"><img alt="Gold Front" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcExfgYILhKEAuzVCRXPS354zMMj05AOqryzz8pxHe7wcNHYpThX_0Xnx_ZChGJfns_Yzyrf5TeKUCiJ5jryYPbszNlpNScOoHwqm47SsWBiiIrl7yWtP7c4HkUJ5l-Ue_SkNOk547AXBATNw_Mzaqb2oRmUMuowO7vbnkiAVcwPPkZfxH1_N_61dX4vuP96RIqhiPdMImdbLvhRwfiDEAK5jc68oyqjZEXaqQfiVyuk67cU9_DBBUBKemygVPhSB-MJJCCQJD9SM"><img alt="Balenciaga Off-White Graphic Tshirt Back View" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY6eGd1GC-Z4HlVXkWesLQpqNWJHw1aGmboSWeVK3g2XYQNxiLBvTZabuHI6cmSkGhwhz8gcsLFy9e3KVre1tZAXFVOoa9GKL9HC6_vke1icOgbZfN9Sd5FVdu_OxpsfNLC_S8cjtOadpBYE40jOa9vElWpjUcFSKyUCKStcCUqR7N9o2bVq-0m-U3wQs6dP1rhswZj4zDusGTu8wNGAwan2M-ejP6HcRTtTJ1pKEbu09t1z3VYzAA1A9F7LgmkZgacU5UQgrl2PU"><img alt="Crimson Front" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYjGB3aoTYvWY2yO3yx0Td0RzjWgApB4bLe8V-OikX1se5pU7itybMWHOhxqglgFYb_emYaSMPUb7_jBw3yjFe_uZ7iLT4Cybh9ba6M0Nbgg_CT0KP-yVHFzDFh3Dl6Ft8arcK_HXMzGHU87UBs_0pps579oVVusVJLF3HOrPry96pEq4x1rgAM_vfTWnNhKfYSdo0iBgRAoNC-ZBFBx8ntYMPgG6828eS5kpkrLR3tlraoIXfrvE2gv-w7GDURoACU_AVPdRsopc"><img alt="Crimson Back" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFIQm-B5RQNBKygT_xw-1EFWg2Ho0HCVX0TRh5Kbu8u-AIPxHRRluyBilX-nrDAStu9u6KM4PzveqXsoGGTREvU9SipTiP1NvHSuONxQ1vjpKEy_RW5uwXms9tCSkTW2chCTNJB44jSyU0kWOcJL1PI0LoHzy9fGW1G3YInKkkifWpVmNOMK0MPgo7fw5YlHjOcOM3pLIdD6C1dR4LPlmDJfEz7EafAQJnLQAN4cz6ajuOilxWRFc_NW-4b-RCs2y5-q6dN7zERI0"><img alt="Royal Front" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbQMQRFDALr9BsZbGMV1vfrFxTyMyoADJNCQ9DjR42HNGUvOt650iawDxzjJ6_oQA3Ww1jPhQhnMwHJyExRpr4I7UNVkL0hcm-oluSeXByewDOtaptaSonpsyy5M29tUPS1cm0FgHwuh0V4i4OvD7KiTKhBz1atY6XMF-il74SXCKpRc8QWw4K6L551wjzLN1UhJCOsg_VeLjweW6UAr7VwDXUvdT-lvw6zFLj_2ZC_1JRKSKHkL-1gw6LyjCogO88uu0gRYwfxo0"><img alt="Royal Back" class="w-full h-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB_5c2ZAd6cairRFaeinPbRZo1svNJdInKMnspofTIHfY6X-HptAWezRe58qw2NjQvModV92MkpPj5oaufhKq46O6PUxvUwAFvB3tHw8IsgSIXrftXCBvqSvOD_M4x5hwdIX4BopD0nlCMEiDWFSROaHo1oCaCsLi8aZfNHcMyYq9a1mGouCDSCKS2vI4aIWfBZXsUXbuSukfz5REcpsZarZj9g3JZ7Q-98qZehCLhICblfqi0V06wwWj-c7Ympz2BoPgDC_UDB0Y"></div>
+<div class="absolute top-4 left-4 bg-primary text-on-primary font-label-caps text-[10px] px-3 py-1 tracking-widest z-20">LIMITED RELEASE</div><div class="slider-nav absolute inset-0 flex items-center justify-between px-2 opacity-0 transition-opacity duration-300 pointer-events-none z-20"><button class="prev-btn p-2 bg-surface/60 backdrop-blur-sm text-primary rounded-full hover:bg-primary hover:text-on-primary pointer-events-auto transition-all active:scale-90" onclick="moveSlider(6, -1)"><span class="material-symbols-outlined !text-xl">chevron_left</span></button><button class="next-btn p-2 bg-surface/60 backdrop-blur-sm text-primary rounded-full hover:bg-primary hover:text-on-primary pointer-events-auto transition-all active:scale-90" onclick="moveSlider(6, 1)"><span class="material-symbols-outlined !text-xl">chevron_right</span></button></div><div class="absolute top-4 right-4 bg-surface/60 backdrop-blur-md px-3 py-1 z-20 border border-surface-variant/50"><span class="pagination-indicator font-label-caps text-[10px] text-primary tracking-widest uppercase" id="pagination-6">3 / 12</span></div>
+<div class="quick-view absolute inset-x-0 bottom-0 opacity-0 transform translate-y-4 transition-all duration-300 bg-surface/80 backdrop-blur-md p-4 z-30">
+<button onclick="event.stopPropagation(); window.location.href='product.html?id=' + this.closest('.product-card').getAttribute('data-product-id');" class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:bg-primary-container active:scale-[0.98] transition-all uppercase tracking-[0.2em] shadow-lg">BUY NOW</button>
+</div>
+</div>
+<div class="text-center">
+<h2 class="text-on-surface mb-1 font-display-lg text-2xl font-light">Balenciaga Tshirt</h2>
+<p class="font-label-caps text-label-caps text-primary"><span class="" style="font-size: 16px; font-weight: 600;">₹499</span></p><div class="flex justify-center gap-3 mt-4"><button class="swatch-btn w-6 h-6 rounded-full bg-[#1c1c1c] border border-surface-variant active:scale-90 transition-all hover:scale-110" data-color="Black" onclick="goToSlide(6, 0)" title="Black"></button><button class="swatch-btn w-6 h-6 rounded-full border border-surface-variant active:scale-90 transition-all hover:scale-110 active" data-color="Tan" onclick="goToSlide(6, 2)" style="background-color: rgb(194, 178, 128);" title="Tan"></button><button class="swatch-btn w-6 h-6 rounded-full bg-[#808000] border border-surface-variant active:scale-90 transition-all hover:scale-110" data-color="Olive" onclick="goToSlide(6, 4)" title="Olive"></button><button class="swatch-btn w-6 h-6 rounded-full border border-surface-variant active:scale-90 transition-all hover:scale-110" data-color="Cream" onclick="goToSlide(6, 6)" style="background-color: rgb(245, 245, 220);" title="Cream"></button><button class="swatch-btn w-6 h-6 rounded-full bg-[#B22222] border border-surface-variant active:scale-90 transition-all hover:scale-110" data-color="Red" onclick="goToSlide(6, 8)" title="Red"></button><button class="swatch-btn w-6 h-6 rounded-full border border-surface-variant active:scale-90 transition-all hover:scale-110" data-color="Brown" onclick="goToSlide(6, 10)" style="background-color: rgb(93, 64, 55);" title="Brown"></button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</main>
+<!-- Footer -->
+<footer class="w-full py-24 bg-surface-container-lowest">
+<div class="flex flex-col items-center justify-center px-margin-mobile md:px-margin-desktop">
+<div class="font-display-lg text-[32px] md:text-[40px] text-primary uppercase mb-12 tracking-[0.15em] font-bold">
+            DYNASTY WEAR'S
+        </div>
+<div class="flex flex-wrap justify-center gap-x-12 gap-y-6 mb-12">
+<a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-all uppercase tracking-[0.2em]" href="#">PRIVACY POLICY</a>
+<a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-all uppercase tracking-[0.2em]" href="#">TERMS OF SERVICE</a>
+<a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-all uppercase tracking-[0.2em]" href="#">SHIPPING &amp; REPLACEMENT</a>
+<a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-all uppercase tracking-[0.2em]" href="#">CONTACT</a>
+</div>
+<p class="font-label-caps text-[10px] text-on-surface-variant/50 tracking-[0.3em] uppercase mb-12">
+            Â© 2024 DYNASTY WEAR'S. ALL RIGHTS RESERVED.
+        </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 border border-secondary-container/20 flex items-center justify-center hover:border-primary transition-colors text-on-surface-variant hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="share">share</span>
+</a>
+<a class="w-10 h-10 border border-secondary-container/20 flex items-center justify-center hover:border-primary transition-colors text-on-surface-variant hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="public">public</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        function updatePagination(productId, index, total) {
+            const indicator = document.getElementById(`pagination-${productId}`);
+            if (indicator) {
+                indicator.textContent = `${index + 1} / ${total}`;
+            }
+        }
+
+        function moveSlider(productId, direction) {
+            const container = document.getElementById(`slider-container-${productId}`);
+            const card = container.closest('.product-card');
+            const totalSlides = container.children.length;
+            let currentIndex = parseInt(card.getAttribute('data-current-index'));
+
+            currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+            
+            container.scrollTo({
+                left: container.offsetWidth * currentIndex,
+                behavior: 'smooth'
+            });
+        }
+
+        function goToSlide(productId, slideIndex) {
+            const container = document.getElementById(`slider-container-${productId}`);
+            container.scrollTo({
+                left: container.offsetWidth * slideIndex,
+                behavior: 'smooth'
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const sliders = document.querySelectorAll('.slider-container');
+            sliders.forEach(container => {
+                container.addEventListener('scroll', () => {
+                    const card = container.closest('.product-card');
+                    const productId = card.querySelector('.slider-container').id.replace('slider-container-', '');
+                    
+                    const slideWidth = container.offsetWidth;
+                    const scrollPos = container.scrollLeft;
+                    const currentIndex = Math.round(scrollPos / slideWidth);
+                    const totalSlides = container.children.length;
+                    
+                    card.setAttribute('data-current-index', currentIndex);
+                    updatePagination(productId, currentIndex, totalSlides);
+                    
+                    const swatches = card.querySelectorAll('.swatch-btn');
+                    let closestSlideIndex = -1;
+                    let activeBtn = null;
+                    swatches.forEach((btn) => {
+                        const btnOnClick = btn.getAttribute('onclick');
+                        if (btnOnClick) {
+                            const match = btnOnClick.match(/goToSlide\(\d+,\s*(\d+)\)/);
+                            if (match) {
+                                const targetIndex = parseInt(match[1]);
+                                if (targetIndex <= currentIndex && targetIndex >= closestSlideIndex) {
+                                    closestSlideIndex = targetIndex;
+                                    activeBtn = btn;
+                                }
+                            }
+                        }
+                    });
+                    
+                    if(activeBtn) {
+                        swatches.forEach(b => b.classList.remove('active'));
+                        activeBtn.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/ecommerce.js?v=2"></script>
+</body>
+</html>
+

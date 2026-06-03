@@ -1,0 +1,13 @@
+{
+  "name": "dynasty-wears",
+  "version": "1.0.0",
+  "description": "Static E-commerce Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -s .",
+    "build": "echo 'No build step required for static HTML'"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}

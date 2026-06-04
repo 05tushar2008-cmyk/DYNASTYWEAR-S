@@ -44,95 +44,120 @@
     </nav>
 
     <main class="flex-grow pt-32 pb-32 px-8 md:px-20 max-w-[1200px] mx-auto w-full">
-        <h1 class="font-display-lg text-4xl lg:text-5xl font-light mb-12">Checkout</h1>
+        <h1 class="font-display-lg text-4xl lg:text-5xl font-light mb-8">Checkout</h1>
+        
+        <!-- Step Indicator -->
+        <div class="flex items-center justify-start mb-10 gap-4">
+            <div id="step-indicator-1" class="flex items-center gap-2 text-primary font-label-caps text-sm tracking-wider uppercase font-semibold transition-all duration-300">
+                <span class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold transition-all duration-300">1</span>
+                Shipping
+            </div>
+            <div class="w-16 h-[1px] bg-surface-variant"></div>
+            <div id="step-indicator-2" class="flex items-center gap-2 text-on-surface-variant font-label-caps text-sm tracking-wider uppercase transition-all duration-300">
+                <span class="w-7 h-7 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center text-xs font-bold transition-all duration-300">2</span>
+                Payment
+            </div>
+        </div>
         
         <div class="flex flex-col lg:flex-row gap-12">
-            <div class="w-full lg:w-2/3 space-y-8">
-                <form id="checkout-form" class="space-y-8">
-                    <!-- Shipping -->
-                    <div class="bg-surface-container-low p-8 border border-surface-variant rounded-lg">
-                        <h2 class="font-headline-lg text-2xl mb-6">Shipping Details</h2>
-                        <div class="grid grid-cols-2 gap-6">
-                            <div>
-                                <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">First Name</label>
-                                <input required type="text" id="firstName" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
-                            </div>
-                            <div>
-                                <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">Last Name</label>
-                                <input required type="text" id="lastName" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
-                            </div>
-                            <div class="col-span-2">
-                                <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">Mobile Number</label>
-                                <input required type="tel" id="mobile" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
-                            </div>
-                            <div>
-                                <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">House Number</label>
-                                <input required type="text" id="houseNumber" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
-                            </div>
-                            <div>
-                                <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">Street</label>
-                                <input required type="text" id="street" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
-                            </div>
-                            <div class="col-span-2">
-                                <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">Landmark</label>
-                                <input required type="text" id="landmark" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
-                            </div>
-                            <div>
-                                <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">City</label>
-                                <input required type="text" id="city" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
-                            </div>
-                            <div>
-                                <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">Pin Code</label>
-                                <input required type="text" id="pinCode" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
-                            </div>
-                            <div class="col-span-2">
-                                <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">Country</label>
-                                <input required type="text" id="country" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
+            <div class="w-full lg:w-2/3">
+                <form id="checkout-form" class="relative overflow-hidden space-y-8 min-h-[400px]">
+                    <!-- Step 1: Shipping Details -->
+                    <div id="step-shipping" class="space-y-8 transition-all duration-300 transform translate-x-0 opacity-100">
+                        <div class="bg-surface-container-low p-8 border border-surface-variant rounded-lg">
+                            <h2 class="font-headline-lg text-2xl mb-6">Shipping Details</h2>
+                            <div class="grid grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">First Name</label>
+                                    <input required type="text" id="firstName" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
+                                </div>
+                                <div>
+                                    <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">Last Name</label>
+                                    <input required type="text" id="lastName" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
+                                </div>
+                                <div class="col-span-2">
+                                    <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">Mobile Number</label>
+                                    <input required type="tel" id="mobile" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
+                                </div>
+                                <div>
+                                    <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">House Number</label>
+                                    <input required type="text" id="houseNumber" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
+                                </div>
+                                <div>
+                                    <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">Street</label>
+                                    <input required type="text" id="street" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
+                                </div>
+                                <div class="col-span-2">
+                                    <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">Landmark</label>
+                                    <input required type="text" id="landmark" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
+                                </div>
+                                <div>
+                                    <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">City</label>
+                                    <input required type="text" id="city" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
+                                </div>
+                                <div>
+                                    <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">Pin Code</label>
+                                    <input required type="text" id="pinCode" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
+                                </div>
+                                <div class="col-span-2">
+                                    <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">Country</label>
+                                    <input required type="text" id="country" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
+                                </div>
                             </div>
                         </div>
+                        <button type="button" onclick="goToPaymentStep()" class="w-full h-14 bg-primary text-on-primary font-label-caps text-sm tracking-[0.2em] uppercase hover:bg-primary-container active:scale-[0.98] transition-all shadow-lg mt-8">
+                            Proceed to Payment
+                        </button>
                     </div>
                     
-                    <!-- Payment Details -->
-                    <div class="bg-surface-container-low p-8 border border-surface-variant rounded-lg">
-                        <h2 class="font-headline-lg text-2xl mb-6">Payment Method</h2>
-                        
-                        <div class="space-y-4 mb-6">
-                            <label class="flex items-center gap-4 cursor-pointer p-4 border border-surface-variant rounded hover:border-primary transition-colors">
-                                <input type="radio" name="paymentMethod" value="cod" class="text-primary focus:ring-primary bg-transparent border-surface-variant h-5 w-5" checked onchange="togglePaymentQR()">
-                                <div>
-                                    <span class="block font-label-caps text-sm uppercase">Cash on Delivery</span>
-                                    <span class="block text-xs text-on-surface-variant mt-1">Requires ₹100 advance payment via QR. Remaining balance paid at delivery.</span>
-                                </div>
-                            </label>
+                    <!-- Step 2: Payment Details -->
+                    <div id="step-payment" class="hidden space-y-8 transition-all duration-300 transform translate-x-10 opacity-0">
+                        <div class="bg-surface-container-low p-8 border border-surface-variant rounded-lg">
+                            <h2 class="font-headline-lg text-2xl mb-6">Payment Method</h2>
                             
-                            <label class="flex items-center gap-4 cursor-pointer p-4 border border-surface-variant rounded hover:border-primary transition-colors">
-                                <input type="radio" name="paymentMethod" value="full" class="text-primary focus:ring-primary bg-transparent border-surface-variant h-5 w-5" onchange="togglePaymentQR()">
-                                <div>
-                                    <span class="block font-label-caps text-sm uppercase">Pay Full Amount</span>
-                                    <span class="block text-xs text-on-surface-variant mt-1">Pay the full cart total via QR Code securely.</span>
+                            <div class="space-y-4 mb-6">
+                                <label class="flex items-center gap-4 cursor-pointer p-4 border border-surface-variant rounded hover:border-primary transition-colors">
+                                    <input type="radio" name="paymentMethod" value="cod" class="text-primary focus:ring-primary bg-transparent border-surface-variant h-5 w-5" checked onchange="togglePaymentQR()">
+                                    <div>
+                                        <span class="block font-label-caps text-sm uppercase">Cash on Delivery</span>
+                                        <span class="block text-xs text-on-surface-variant mt-1">Requires ₹100 advance payment via QR. Remaining balance paid at delivery.</span>
+                                    </div>
+                                </label>
+                                
+                                <label class="flex items-center gap-4 cursor-pointer p-4 border border-surface-variant rounded hover:border-primary transition-colors">
+                                    <input type="radio" name="paymentMethod" value="full" class="text-primary focus:ring-primary bg-transparent border-surface-variant h-5 w-5" onchange="togglePaymentQR()">
+                                    <div>
+                                        <span class="block font-label-caps text-sm uppercase">Pay Full Amount</span>
+                                        <span class="block text-xs text-on-surface-variant mt-1">Pay the full cart total via QR Code securely.</span>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <!-- QR Code Section -->
+                            <div id="qr-section" class="bg-surface/50 p-6 rounded-lg border border-primary/20 text-center">
+                                <h3 class="font-label-caps text-sm text-primary mb-4 uppercase tracking-widest" id="qr-instruction">Scan to pay ₹100 Advance</h3>
+                                <div class="bg-white p-2 inline-block rounded-xl mb-4 shadow-lg shadow-primary/10">
+                                    <img src="assets/qr_code.jpg" alt="Payment QR Code" class="w-48 h-48 object-contain" onerror="this.src='https://via.placeholder.com/200?text=QR+Code+Missing'">
                                 </div>
-                            </label>
+                                <p class="text-xs text-on-surface-variant mb-6">Open your UPI app (GPay, PhonePe, Paytm) and scan the QR code to make the payment.</p>
+                                
+                                <div class="text-left">
+                                    <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">Transaction ID / UTR Number *</label>
+                                    <input required type="text" id="transactionId" placeholder="e.g. 312345678901" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
+                                    <p class="text-[10px] text-on-surface-variant mt-2">Please enter the 12-digit UTR/Transaction ID after paying.</p>
+                                </div>
+                            </div>
                         </div>
                         
-                        <!-- QR Code Section -->
-                        <div id="qr-section" class="bg-surface/50 p-6 rounded-lg border border-primary/20 text-center">
-                            <h3 class="font-label-caps text-sm text-primary mb-4 uppercase tracking-widest" id="qr-instruction">Scan to pay ₹100 Advance</h3>
-                            <div class="bg-white p-2 inline-block rounded-xl mb-4 shadow-lg shadow-primary/10">
-                                <img src="assets/qr_code.jpg" alt="Payment QR Code" class="w-48 h-48 object-contain" onerror="this.src='https://via.placeholder.com/200?text=QR+Code+Missing'">
-                            </div>
-                            <p class="text-xs text-on-surface-variant mb-6">Open your UPI app (GPay, PhonePe, Paytm) and scan the QR code to make the payment.</p>
-                            
-                            <div class="text-left">
-                                <label class="block font-label-caps text-xs text-on-surface-variant mb-2 uppercase">Transaction ID / UTR Number *</label>
-                                <input required type="text" id="transactionId" placeholder="e.g. 312345678901" class="w-full bg-transparent border-surface-variant focus:border-primary focus:ring-0 rounded">
-                                <p class="text-[10px] text-on-surface-variant mt-2">Please enter the 12-digit UTR/Transaction ID after paying.</p>
-                            </div>
+                        <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                            <button type="button" onclick="goToShippingStep()" class="w-full sm:w-1/3 h-14 border border-surface-variant text-on-surface-variant font-label-caps text-sm tracking-[0.2em] uppercase hover:border-primary hover:text-primary active:scale-[0.98] transition-all shadow-lg">
+                                Back
+                            </button>
+                            <button type="submit" class="w-full sm:w-2/3 h-14 bg-primary text-on-primary font-label-caps text-sm tracking-[0.2em] uppercase hover:bg-primary-container active:scale-[0.98] transition-all shadow-lg">
+                                Place Order (₹<span id="submit-total">0</span>)
+                            </button>
                         </div>
                     </div>
-                    
-                    <button type="submit" class="w-full h-14 bg-primary text-on-primary font-label-caps text-sm tracking-[0.2em] uppercase hover:bg-primary-container active:scale-[0.98] transition-all shadow-lg mt-8">
-                        Place Order (₹<span id="submit-total">0</span>)
-                    </button>
                 </form>
             </div>
             
@@ -213,6 +238,60 @@
             } else {
                 instruction.textContent = 'Scan to pay Full Amount (₹' + total + ')';
             }
+        }
+
+        function goToPaymentStep() {
+            const shippingInputs = document.querySelectorAll('#step-shipping input[required]');
+            for (let input of shippingInputs) {
+                if (!input.checkValidity()) {
+                    input.reportValidity();
+                    return;
+                }
+            }
+            
+            const stepShipping = document.getElementById('step-shipping');
+            const stepPayment = document.getElementById('step-payment');
+            const indicator1 = document.getElementById('step-indicator-1');
+            const indicator2 = document.getElementById('step-indicator-2');
+            
+            stepShipping.classList.add('opacity-0', '-translate-x-10');
+            setTimeout(() => {
+                stepShipping.classList.add('hidden');
+                stepPayment.classList.remove('hidden');
+                // Force a reflow
+                stepPayment.offsetHeight;
+                stepPayment.classList.remove('opacity-0', 'translate-x-10');
+                
+                // Update Indicators
+                indicator1.className = "flex items-center gap-2 text-on-surface-variant font-label-caps text-sm tracking-wider uppercase transition-all duration-300";
+                indicator1.querySelector('span').className = "w-7 h-7 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center text-xs font-bold transition-all duration-300";
+                
+                indicator2.className = "flex items-center gap-2 text-primary font-label-caps text-sm tracking-wider uppercase font-semibold transition-all duration-300";
+                indicator2.querySelector('span').className = "w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold transition-all duration-300";
+            }, 300);
+        }
+
+        function goToShippingStep() {
+            const stepShipping = document.getElementById('step-shipping');
+            const stepPayment = document.getElementById('step-payment');
+            const indicator1 = document.getElementById('step-indicator-1');
+            const indicator2 = document.getElementById('step-indicator-2');
+            
+            stepPayment.classList.add('opacity-0', 'translate-x-10');
+            setTimeout(() => {
+                stepPayment.classList.add('hidden');
+                stepShipping.classList.remove('hidden');
+                // Force a reflow
+                stepShipping.offsetHeight;
+                stepShipping.classList.remove('opacity-0', '-translate-x-10');
+                
+                // Update Indicators
+                indicator1.className = "flex items-center gap-2 text-primary font-label-caps text-sm tracking-wider uppercase font-semibold transition-all duration-300";
+                indicator1.querySelector('span').className = "w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold transition-all duration-300";
+                
+                indicator2.className = "flex items-center gap-2 text-on-surface-variant font-label-caps text-sm tracking-wider uppercase transition-all duration-300";
+                indicator2.querySelector('span').className = "w-7 h-7 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center text-xs font-bold transition-all duration-300";
+            }, 300);
         }
 
         document.getElementById('checkout-form').addEventListener('submit', async function(e) {

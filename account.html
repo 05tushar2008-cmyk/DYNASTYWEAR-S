@@ -86,14 +86,14 @@ src="https://www.facebook.com/tr?id=1369350348585833&ev=PageView&noscript=1"
 
         <!-- Dashboard View -->
         <div id="dashboard-view" class="hidden">
-            <div class="flex justify-between items-end mb-12">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 mb-8 sm:mb-12">
                 <div>
-                    <h1 class="font-display-lg text-4xl lg:text-5xl font-light mb-2">My Account</h1>
+                    <h1 class="font-display-lg text-3xl sm:text-4xl lg:text-5xl font-light mb-2">My Account</h1>
                     <p class="text-on-surface-variant">Welcome back, <span id="user-email" class="text-primary"></span></p>
                 </div>
-                <div class="flex gap-4">
-                    <a id="admin-link" href="admin.html" class="hidden px-6 py-3 border border-primary text-primary font-label-caps text-xs tracking-widest uppercase hover:bg-primary hover:text-[#3c2f00] transition-colors">Admin Dashboard</a>
-                    <button onclick="logout()" class="px-6 py-3 border border-surface-variant text-on-surface-variant font-label-caps text-xs tracking-widest uppercase hover:border-error hover:text-error transition-colors">Sign Out</button>
+                <div class="flex flex-wrap gap-3 w-full sm:w-auto">
+                    <a id="admin-link" href="admin.html" class="hidden flex-1 sm:flex-initial text-center px-6 py-3 border border-primary text-primary font-label-caps text-xs tracking-widest uppercase hover:bg-primary hover:text-[#3c2f00] transition-colors">Admin Dashboard</a>
+                    <button onclick="logout()" class="flex-1 sm:flex-initial px-6 py-3 border border-surface-variant text-on-surface-variant font-label-caps text-xs tracking-widest uppercase hover:border-error hover:text-error transition-colors">Sign Out</button>
                 </div>
             </div>
 

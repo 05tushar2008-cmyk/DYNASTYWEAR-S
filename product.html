@@ -62,7 +62,7 @@ src="https://www.facebook.com/tr?id=1369350348585833&ev=PageView&noscript=1"
 </head>
 <body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden">
     <!-- Navbar (same as collection) -->
-    <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-variant flex justify-between items-center px-8 md:px-20 h-20 transition-all duration-300">
+    <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-variant flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 transition-all duration-300">
         <div class="font-display-lg text-2xl tracking-tighter text-primary"><a href="index.html">DYNASTY WEAR'S</a></div>
         <div class="hidden md:flex items-center gap-10">
             <a class="font-label-caps text-xs tracking-widest text-primary border-b border-primary pb-1 uppercase" href="collections.html">Collections</a>
@@ -80,7 +80,7 @@ src="https://www.facebook.com/tr?id=1369350348585833&ev=PageView&noscript=1"
 </div>
     </nav>
 
-    <main class="flex-grow pt-32 pb-32 px-8 md:px-20 max-w-[1440px] mx-auto w-full">
+    <main class="flex-grow pt-28 md:pt-32 pb-16 md:pb-32 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto w-full">
         <nav class="mb-8 flex items-center gap-2">
             <a class="font-label-caps text-xs tracking-widest text-on-surface-variant hover:text-primary uppercase" href="index.html">Home</a>
             <span class="material-symbols-outlined text-[12px] text-surface-variant">chevron_right</span>
@@ -184,11 +184,10 @@ src="https://www.facebook.com/tr?id=1369350348585833&ev=PageView&noscript=1"
         </div>
     </main>
 
-    <!-- You Might Also Like Section -->
-    <section class="w-full py-24 bg-background">
-        <div class="px-8 md:px-20 max-w-[1440px] mx-auto">
-            <h3 class="font-headline-lg text-2xl md:text-3xl text-on-surface mb-12 uppercase text-center tracking-widest">You Might Also Like</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section class="w-full py-12 md:py-24 bg-background">
+        <div class="px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+            <h3 class="font-headline-lg text-2xl md:text-3xl text-on-surface mb-8 md:mb-12 uppercase text-center tracking-widest">You Might Also Like</h3>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                 <!-- Product 2: Break Rules Tshirt -->
                 <div class="group product-card" data-current-index="0" data-product-id="2">
                     <div class="relative aspect-[3/4] mb-6 overflow-hidden bg-surface-container-low group/slider">
@@ -254,12 +253,12 @@ src="https://www.facebook.com/tr?id=1369350348585833&ev=PageView&noscript=1"
     </section>
 
     <!-- Footer -->
-    <footer class="w-full py-24 bg-surface-container-lowest border-t border-surface-variant">
-        <div class="flex flex-col items-center justify-center px-8 md:px-20 max-w-[1440px] mx-auto">
+    <footer class="w-full py-12 md:py-24 bg-surface-container-lowest border-t border-surface-variant">
+        <div class="flex flex-col items-center justify-center px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
             <div class="font-display-lg text-[32px] md:text-[40px] text-primary uppercase mb-12 tracking-[0.15em] font-bold">
                 DYNASTY WEAR'S
             </div>
-            <div class="flex flex-wrap justify-center gap-x-12 gap-y-6 mb-12">
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-4 md:gap-x-12 md:gap-y-6 mb-12">
                 <a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-all uppercase tracking-[0.2em]" href="privacy.html">PRIVACY POLICY</a>
                 <a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-all uppercase tracking-[0.2em]" href="terms.html">TERMS OF SERVICE</a>
                 <a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-all uppercase tracking-[0.2em]" href="shipping.html">SHIPPING &amp; REPLACEMENT</a>

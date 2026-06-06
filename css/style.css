@@ -40,7 +40,13 @@ body {
     -webkit-backdrop-filter: blur(12px);
     z-index: 100;
     border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-    transition: all 0.3s ease;
+    transition: padding 0.3s ease, background 0.3s ease, border-bottom 0.3s ease;
+}
+
+.navbar.scrolled {
+    padding: 1rem 4rem;
+    background: rgba(5, 5, 5, 0.95);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .logo {
@@ -369,6 +375,12 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+    .navbar.scrolled {
+        padding: 0.75rem 1.5rem;
+    }
     .nav-links {
         display: none;
     }
@@ -376,7 +388,8 @@ footer {
         grid-template-columns: 1fr;
     }
     .hero-title {
-        font-size: 8vw;
+        font-size: 10vw;
+        letter-spacing: 4px;
     }
 }
 

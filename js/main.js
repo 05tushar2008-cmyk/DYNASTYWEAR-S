@@ -108,17 +108,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Add Navbar transition on scroll
     const navbar = document.querySelector('.navbar');
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(5, 5, 5, 0.9)';
-            navbar.style.padding = '1rem 4rem';
-        } else {
-            navbar.style.background = 'rgba(5, 5, 5, 0.6)';
-            navbar.style.padding = '1.5rem 4rem';
-        }
-    });
+    if (navbar) {
+        window.addEventListener("scroll", () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    }
 
     // Subtle parallax/reveal effect for Tailwind sections
     const observerOptions = {

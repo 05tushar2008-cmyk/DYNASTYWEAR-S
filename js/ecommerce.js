@@ -524,8 +524,82 @@ async function getAllProfiles() {
     return [];
 }
 
+function initMobileMenu() {
+    const nav = document.querySelector('nav');
+    if (!nav) return;
+
+    // Remove existing hamburger button if any
+    const existingBtn = document.getElementById('mobile-menu-btn');
+    if (existingBtn) existingBtn.remove();
+    const existingDrawer = document.getElementById('mobile-menu-drawer');
+    if (existingDrawer) existingDrawer.remove();
+
+    // 1. Create hamburger button
+    const hamburgerBtn = document.createElement('button');
+    hamburgerBtn.id = 'mobile-menu-btn';
+    hamburgerBtn.className = 'md:hidden text-on-surface-variant hover:text-primary focus:outline-none flex items-center justify-center';
+    hamburgerBtn.style.cssText = 'color: #e3e2e2; background: none; border: none; cursor: pointer; padding: 0; margin-left: 1rem; outline: none; transition: color 0.3s; z-index: 101;';
+    hamburgerBtn.innerHTML = '<span class="material-symbols-outlined" style="font-size: 28px; font-weight: 300;">menu</span>';
+
+    // Find the actions container (either .nav-actions or .flex.items-center.gap-6 or the last child of nav)
+    const actionContainer = nav.querySelector('.nav-actions') || nav.querySelector('.flex.items-center.gap-6') || nav.lastElementChild;
+    if (actionContainer) {
+        actionContainer.appendChild(hamburgerBtn);
+    } else {
+        nav.appendChild(hamburgerBtn);
+    }
+
+    // 2. Create drawer container
+    const drawer = document.createElement('div');
+    drawer.id = 'mobile-menu-drawer';
+    drawer.style.cssText = 'position: fixed; inset: 0; z-index: 9999; background: rgba(18, 20, 20, 0.98); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2rem;';
+    drawer.innerHTML = `
+        <button id="mobile-menu-close-btn" class="text-on-surface-variant hover:text-primary" style="position: absolute; top: 1.5rem; right: 2rem; background: none; border: none; color: #d0c5af; cursor: pointer; outline: none;">
+            <span class="material-symbols-outlined" style="font-size: 32px; font-weight: 300;">close</span>
+        </button>
+        <a href="index.html" class="font-display-lg text-primary tracking-[0.15em] uppercase mb-4" style="font-family: 'Bodoni Moda', serif; color: #f2ca50; text-decoration: none; font-size: 2.5rem; letter-spacing: 0.15em; font-weight: 500;">DYNASTY</a>
+        <a href="collections.html" style="font-family: 'DM Sans', sans-serif; color: #e3e2e2; text-decoration: none; font-size: 1.25rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 400; transition: color 0.3s;" onmouseover="this.style.color='#f2ca50'" onmouseout="this.style.color='#e3e2e2'">Collections</a>
+        <a href="index.html#about" style="font-family: 'DM Sans', sans-serif; color: #e3e2e2; text-decoration: none; font-size: 1.25rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 400; transition: color 0.3s;" onmouseover="this.style.color='#f2ca50'" onmouseout="this.style.color='#e3e2e2'">The Brand</a>
+        <a href="index.html#contact" style="font-family: 'DM Sans', sans-serif; color: #e3e2e2; text-decoration: none; font-size: 1.25rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 400; transition: color 0.3s;" onmouseover="this.style.color='#f2ca50'" onmouseout="this.style.color='#e3e2e2'">Contact</a>
+        <a href="account.html" style="font-family: 'DM Sans', sans-serif; color: #e3e2e2; text-decoration: none; font-size: 1.25rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 400; transition: color 0.3s;" onmouseover="this.style.color='#f2ca50'" onmouseout="this.style.color='#e3e2e2'">My Account</a>
+        <a href="cart.html" style="font-family: 'DM Sans', sans-serif; color: #e3e2e2; text-decoration: none; font-size: 1.25rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 400; transition: color 0.3s;" onmouseover="this.style.color='#f2ca50'" onmouseout="this.style.color='#e3e2e2'">Shopping Bag</a>
+    `;
+    document.body.appendChild(drawer);
+
+    // 3. Event listeners
+    window.toggleMobileMenu = function() {
+        const isOpen = drawer.style.transform === 'translateX(0%)' || drawer.style.transform === 'translateX(0px)';
+        if (isOpen) {
+            drawer.style.transform = 'translateX(100%)';
+            document.body.style.overflow = '';
+        } else {
+            drawer.style.transform = 'translateX(0%)';
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    hamburgerBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.toggleMobileMenu();
+    });
+
+    drawer.querySelector('#mobile-menu-close-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        window.toggleMobileMenu();
+    });
+
+    // Close menu when clicking on any link in the drawer
+    drawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            drawer.style.transform = 'translateX(100%)';
+            document.body.style.overflow = '';
+        });
+    });
+}
+
 // Init
 document.addEventListener('DOMContentLoaded', () => {
+    initMobileMenu();
     updateCartCount();
     if(document.querySelector('.dynamic-title')) {
         loadProductDetails();

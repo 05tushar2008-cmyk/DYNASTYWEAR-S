@@ -112,14 +112,14 @@ body {
 
 /* Hero Section with Canvas */
 .hero-sequence-container {
-    height: 300vh; /* gives us 3 screens of scroll for the animation */
+    height: 300dvh; /* gives us 3 screens of scroll for the animation */
     position: relative;
 }
 
 .canvas-wrapper {
     position: sticky;
     top: 0;
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
     overflow: hidden;
     background: radial-gradient(circle at center, var(--brown-deep) 0%, var(--bg-color) 70%);
@@ -398,3 +398,40 @@ footer {
     box-shadow: 0 0 0 2px var(--bg-color), 0 0 0 4px var(--accent-gold);
     border-color: transparent !important;
 }
+
+/* Responsive Custom Utilities */
+.px-margin-mobile {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+}
+
+@media (min-width: 768px) {
+    .md\:px-margin-desktop {
+        padding-left: 80px !important;
+        padding-right: 80px !important;
+    }
+    
+    .md\:py-section-gap {
+        padding-top: 160px !important;
+        padding-bottom: 160px !important;
+    }
+    
+    .md\:gap-gutter {
+        gap: 32px !important;
+    }
+}
+
+.max-w-container-max {
+    max-width: 1440px !important;
+}
+
+.gap-gutter {
+    gap: 32px !important;
+}
+
+/* Responsive Custom Typography */
+.text-headline-lg-mobile {
+    font-size: 28px !important;
+    line-height: 36px !important;
+}
+
